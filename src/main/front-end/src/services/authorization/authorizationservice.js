@@ -11,14 +11,14 @@ import router from '../../router/'
 // todo plugin in signup to a signup url
 
 export default {
-
   user: {
     authenticated: false
   },
   login (credentials, redirect) {
     return new Promise((resolve, reject) => {
-      Vue.$http.post('login', credentials).then(response => {
-        sessionStorage.setItem('auth_token', response.headers.authorization)
+      Vue.$http.post('signup', credentials).then(response => {
+        console.log(response.data)
+        this.authorize(response.data)
         this.user.authenticated = true
         if (redirect) {
           router.push(redirect)
@@ -28,7 +28,20 @@ export default {
         console.log('unauthorized' + error)
       })
     })
-  }, // todo this is a placeholder which is the same as sign-in - in fact, it should be sending user state to the back-end
+  },
+  authorize (data) {
+    return new Promise((resolve, reject) => {
+      Vue.$http.post('auth', data).then(response => {
+        sessionStorage.setItem('auth_token', response.data.token)
+        console.log(response.data.token)
+        this.user.authenticated = true
+      }
+        ).catch((error) => {
+          console.log('unauthorized' + error)
+        })
+    })
+  },
+   // todo this now doesn't work... copy login here this is a placeholder which is the same as sign-in - in fact, it should be sending user state to the back-end
   signup (credentials, redirect) {
     return new Promise((resolve, reject) => {
       Vue.$http.post('signup', credentials).then(response => {

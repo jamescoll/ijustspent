@@ -15,7 +15,7 @@ Vue.use(VueLodash, lodash)
 // Bootstrap Axios
 Axios.defaults.baseURL = window.AXIOS_BASE_URL ? window.AXIOS_BASE_URL : '/api/'
 Axios.defaults.headers.common.Accept = 'application/json'
-// Axios.defaults.headers.common.Authorization = sessionStorage.getItem('auth_token')
+Axios.defaults.headers.common['x-auth-token'] = sessionStorage.getItem('auth_token')
 Axios.interceptors.response.use(
   response => response,
   (error) => {
