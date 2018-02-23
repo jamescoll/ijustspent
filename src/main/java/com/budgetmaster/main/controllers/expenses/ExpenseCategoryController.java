@@ -1,40 +1,78 @@
 package com.budgetmaster.main.controllers.expenses;
 
 import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.repositories.incomes.IncomeCategoryRepository;
-import com.budgetmaster.main.repositories.incomes.IncomeRepository;
+import com.budgetmaster.main.models.expenses.ExpenseCategory;
+import com.budgetmaster.main.repositories.expenses.ExpenseCategoryRepository;
+import com.budgetmaster.main.repositories.resources.IconRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/v1")
 public class ExpenseCategoryController extends BaseController {
 
 
     @Autowired
-    IncomeRepository incomeRepository;
+    ExpenseCategoryRepository expenseCategoryRepository;
 
     @Autowired
-    IncomeCategoryRepository incomeCategoryRepository;
+    IconRepository iconRepository;
 
-    @RequestMapping(value="/income")
+
+    @RequestMapping(value = "/expensecategories", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomes(){
+    public ResponseEntity<?> getExpenseCategories() {
 
-        return ok(incomeRepository.findAll());
+        return ok(expenseCategoryRepository.findAll());
 
     }
 
-    @RequestMapping(value="/income/{incomeCategory}")
+    @RequestMapping(value = "/expensecategories/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomesByIncomeCategory(@PathVariable String incomeCategory){
+    public ResponseEntity<?> getExpenseCategory(@PathVariable String id) {
 
-        //todo null checks here
-        return ok(incomeRepository.findByIncomeCategory(incomeCategoryRepository.findByCategoryName(incomeCategory)));
+        return ok(expenseCategoryRepository.findById(id));
+
+    }
+
+
+    @RequestMapping(value = "/expensecategories/icon/{iconId}", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> createExpenseCategory(@PathVariable String iconId,
+                                                   @RequestBody ExpenseCategory expenseCategory) {
+
+        iconRepository.findById(iconId).ifPresent(expenseCategory::setIcon);
+
+        return ok(expenseCategoryRepository.save(expenseCategory));
+    }
+
+    @RequestMapping(value = "/expensecategories/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deleteExpenseCategory(@PathVariable String id) {
+
+        expenseCategoryRepository.deleteById(id);
+        return ok();
+
+    }
+
+    @RequestMapping(value = "/expensecategories", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deleteExpenseCategories() {
+
+        expenseCategoryRepository.deleteAll();
+        return ok();
+
+    }
+
+    @RequestMapping(value = "/expensecategories/icon/{iconId}", method = RequestMethod.PUT)
+    @ResponseBody
+    public ResponseEntity<?> updateExpense(@PathVariable String iconId,
+                                           @RequestBody ExpenseCategory expenseCategory) {
+
+        iconRepository.findById(iconId).ifPresent(expenseCategory::setIcon);
+
+        return ok(expenseCategoryRepository.save(expenseCategory));
 
     }
 }

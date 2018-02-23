@@ -23,6 +23,55 @@
           Takes an opinionated view of building production-ready Spring applications.
         </div>
       </li>
+       <li class="" @click="open('chart')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="chart">D3 simple line</router-link></h5>
+          A d3 simple line chart
+        </div>
+      </li>
+       <li class="" @click="open('d3-circle')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="d3-circle">D3 simple circle</router-link></h5>
+          A d3 simple circle
+        </div>
+      </li>
+      <li class="" @click="open('adjustable-circle')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="adjustable-circle">D3 adjustable circle</router-link></h5>
+          A d3 adjustable circle
+        </div>
+      </li>
+      <li class="" @click="open('pie')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="pie">D3 pie chart</router-link></h5>
+          A d3 pie chart
+        </div>
+      </li>
+      <li class="" @click="open('expense-chart')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="expense-chart">Highcharts Pie Chart</router-link></h5>
+          A Highcharts pie chart
+        </div>
+      </li>
+      <li class="" @click="open('expense-bar-chart')">
+      <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+      <div class="media-body ml-4">
+        <h5 class="mt-0 mb-1"><router-link to="expense-bar-chart">Highcharts Bar Chart</router-link></h5>
+        A Highcharts bar chart
+      </div>
+    </li>
+      <li class="" @click="open('add-payee-form')">
+        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
+        <div class="media-body ml-4">
+          <h5 class="mt-0 mb-1"><router-link to="add-payee-form">Payee Form</router-link></h5>
+          Add Payee Form
+        </div>
+      </li>
     </ul>
   </div>
 </template>

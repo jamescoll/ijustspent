@@ -1,40 +1,68 @@
 package com.budgetmaster.main.controllers.expenses;
 
 import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.repositories.incomes.IncomeCategoryRepository;
-import com.budgetmaster.main.repositories.incomes.IncomeRepository;
+import com.budgetmaster.main.models.expenses.PaymentMethod;
+import com.budgetmaster.main.repositories.expenses.PaymentMethodRepository;
+import com.budgetmaster.main.repositories.resources.IconRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/v1")
 public class PaymentMethodController extends BaseController {
 
 
     @Autowired
-    IncomeRepository incomeRepository;
+    PaymentMethodRepository paymentMethodRepository;
 
     @Autowired
-    IncomeCategoryRepository incomeCategoryRepository;
+    IconRepository iconRepository;
 
-    @RequestMapping(value="/income")
+
+    @RequestMapping(value = "/paymentmethods", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomes(){
-
-        return ok(incomeRepository.findAll());
-
+    public ResponseEntity<?> getPaymentMethods() {
+        return ok(paymentMethodRepository.findAll());
     }
 
-    @RequestMapping(value="/income/{incomeCategory}")
+    @RequestMapping(value = "/paymentmethods/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomesByIncomeCategory(@PathVariable String incomeCategory){
+    public ResponseEntity<?> getPaymentMethod(@PathVariable String id) {
+        return ok(paymentMethodRepository.findById(id));
+    }
 
-        //todo null checks here
-        return ok(incomeRepository.findByIncomeCategory(incomeCategoryRepository.findByCategoryName(incomeCategory)));
+    @RequestMapping(value = "/paymentmethods", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> createPaymentMethod(@RequestBody PaymentMethod payee) {
 
+        return ok(paymentMethodRepository.save(payee));
+    }
+
+    @RequestMapping(value = "/paymentmethods/icon/{iconId}", method = RequestMethod.PUT, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> updatePaymentMethod(@PathVariable String iconId,
+                                                 @RequestBody PaymentMethod payee) {
+        //todo i don't think these will be necessary for update as they will already be on the document
+        //test 1.) updating with subfields on the document as json in the request and 2.) with a changed field on the subdocument
+        //if both work ootb then this call isn't necessary - it still will be on create tho
+        iconRepository.findById(iconId).ifPresent(payee::setIcon);
+        return ok(paymentMethodRepository.save(payee));
+    }
+
+    @RequestMapping(value = "/paymentmethods/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deletePaymentMethod(@PathVariable String id) {
+
+        paymentMethodRepository.deleteById(id);
+        return ok();
+    }
+
+    @RequestMapping(value = "/paymentmethods", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deletePaymentMethods() {
+
+        paymentMethodRepository.deleteAll();
+        return ok();
     }
 }

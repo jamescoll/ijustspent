@@ -1,21 +1,18 @@
 package com.budgetmaster.main.models.expenses;
 
+import com.budgetmaster.main.models.BaseDocument;
+import com.budgetmaster.main.models.resources.Icon;
 import lombok.*;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @EqualsAndHashCode
 @ToString
-public class ExpenseCategory {
+@Document(collection = "expensecategories")
+@Getter
+@Setter
+@AllArgsConstructor
+public class ExpenseCategory extends BaseDocument {
 
-    @Id
-    @Getter
-    private String id;
-
-    @Getter
-    @Setter
     private String categoryName;
-
-    public ExpenseCategory(String categoryName) {
-        this.categoryName = categoryName;
-    }
+    private Icon icon;
 }

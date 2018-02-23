@@ -1,25 +1,20 @@
 package com.budgetmaster.main.models.incomes;
 
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import com.budgetmaster.main.models.BaseDocument;
+import com.budgetmaster.main.models.resources.Icon;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
-@Document(collection = "incomes")
-public class IncomeCategory {
+@Document(collection = "incomecategories")
+@Getter
+@Setter
+@AllArgsConstructor
+public class IncomeCategory extends BaseDocument {
 
-    @Id
-    @Getter
-    private String id;
-
-    @Getter
-    @Setter
     private String categoryName;
-
+    private Icon icon;
 
 }

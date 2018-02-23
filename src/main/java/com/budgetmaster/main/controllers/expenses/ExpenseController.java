@@ -23,7 +23,7 @@ public class ExpenseController extends BaseController {
     @Autowired
     PayeeRepository payeeRepository;
 
-    @RequestMapping(value = "/expenses")
+    @RequestMapping(value = "/expenses", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> getExpenses() {
 
@@ -31,7 +31,7 @@ public class ExpenseController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/expenses/{id}")
+    @RequestMapping(value = "/expenses/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> getExpense(@PathVariable String id) {
 
@@ -82,7 +82,6 @@ public class ExpenseController extends BaseController {
         return ok(expenseRepository.save(expense));
 
     }
-
 
 
 }

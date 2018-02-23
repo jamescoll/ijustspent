@@ -1,14 +1,16 @@
 package com.budgetmaster.main.models.deleteme;
 
+import lombok.*;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Technology {
 
-  private String description;
+    @Getter
+    @Setter
+    private String description;
 
-  public Technology(String description) {
-    this.description = description;
-  }
 
-  public String getDescription() {
-    return description;
-  }
 }

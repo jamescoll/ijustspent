@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.jamesye</groupId>
-  <artifactId>vuejs.spring-boot</artifactId>
-  <version>0.0.2</version>
+  <groupId>com.budgetmaster</groupId>
+  <artifactId>budget-master</artifactId>
+  <version>0.0.8</version>
   <packaging>jar</packaging>
 
-  <name>vuejs.spring-boot</name>
-  <description>A project starter with Vue.js and Spring Boot</description>
+  <name>Budgetmaster</name>
+  <description>A budgetmaker project with Vue and Spring</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -41,13 +41,34 @@
         </exclusion>
       </exclusions>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.20</version>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>23.1-jre</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>1.5.10.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.0</version>
+    </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
@@ -63,6 +84,7 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>

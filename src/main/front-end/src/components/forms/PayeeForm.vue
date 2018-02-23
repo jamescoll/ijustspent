@@ -1,96 +1,64 @@
 <template>
   <div>
-    <vue-highcharts :options='options' ref='lineCharts'></vue-highcharts>
-    <button @click='load'>Reload</button>
+    <p>Hello, world!</p>
   </div>
 </template>
 
 <script>
-import VueHighcharts from 'vue2-highcharts'
-import service from '../../services/'
+  import service from '../../services/expenses/payeeservice'
+  import loginservice from '../../services/authorization/authorizationservice'
 
-const asyncData = {
-  marker: {
-    symbol: 'square'
-  },
-  data: []
-}
-
-function getRandomColor () {
-  var letters = '0123456789ABCDEF'
-  var color = '#'
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
-
-export default {
-  name: 'expense-chart',
-  components: {
-    VueHighcharts
-  },
-  mounted () {
-    // let lineCharts = this.$refs.lineCharts
-    // lineCharts.addSeries(asyncData)
-  },
-  beforeRouteEnter (to, from, next) {
-    service.getExpenseTotals().then((data) => {
-      next(vm => {
-        for (var i in data) {
-          asyncData.data[i] = {name: data[i].description, y: data[i].total, color: getRandomColor()}
+  export default {
+    name: 'add-payee-form',
+    data: function () {
+      return {
+        payee: {
+          name: null,
+          accountNumber: null,
+          phoneNumber: null,
+          website: null,
+          note: null
+        },
+        credentials: {
+          username: null,
+          password: null
         }
-        vm.load()
-      })
-    })
-  },
-  data () {
-    return {
-      chartdata: {
-        marker: {
-          symbol: 'square'
-        },
-        data: []
-      },
-      options: {
-        chart: {
-          type: 'pie'
-        },
-        title: {
-          text: 'January Expenditure'
-        },
-        subtitle: {
-          text: 'Loading from Back-end'
-        },
-        xAxis: {
-
-        },
-        yAxis: {
-
-        },
-        tooltip: {
-          crosshairs: true,
-          shared: true
-        },
-        credits: {
-          enabled: false
-        },
-        plotOptions: {
-          spline: {
-            marker: {
-
-            }
-          }
-        },
-        series: []
+      }
+    },
+    mounted: function () {
+      if (loginservice.checkAuth()) {
+        this.doTheThing()
+      }
+    },
+    methods: {
+      doTheThing () {
+        var tmpPayee = {
+          name: 'ASDF',
+          accountNumber: 'ASDF',
+          phoneNumber: 'ASDF',
+          website: 'ASDF',
+          note: 'ASDF'
+        }
+        console.log(tmpPayee)
+        console.log('Calling Get Payees')
+        console.log(service.getPayees())
+        console.log('Calling Create Payee')
+        service.createPayee(tmpPayee)
+        console.log('Calling Create Payee')
+        service.createPayee(tmpPayee).then(function (data) {
+          console.log(data)
+          data.name = 'QWERTY'
+          console.log('Calling Update Payee')
+          service.updatePayee(data)
+          console.log('Calling Get Payee for Payee ' + data.id)
+          service.getPayee(data.id)
+          console.log('Calling Delete Payee for Payee ' + data.id)
+          service.deletePayee(data.id)
+        })
+       /* this.credentials.username = 'admin'
+        this.credentials.password = 'password'
+        loginservice.login(this.credentials, redirect) */
       }
     }
-  },
-  methods: {
-    load () {
-      let lineCharts = this.$refs.lineCharts
-      lineCharts.addSeries(asyncData)
-    }
   }
-}
 </script>

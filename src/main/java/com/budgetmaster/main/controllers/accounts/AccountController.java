@@ -1,40 +1,76 @@
 package com.budgetmaster.main.controllers.accounts;
 
 import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.repositories.incomes.IncomeCategoryRepository;
-import com.budgetmaster.main.repositories.incomes.IncomeRepository;
+import com.budgetmaster.main.models.accounts.Account;
+import com.budgetmaster.main.repositories.accounts.AccountRepository;
+import com.budgetmaster.main.repositories.accounts.AccountTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/v1")
 public class AccountController extends BaseController {
 
 
     @Autowired
-    IncomeRepository incomeRepository;
+    AccountTypeRepository accountTypeRepository;
 
     @Autowired
-    IncomeCategoryRepository incomeCategoryRepository;
+    AccountRepository accountRepository;
 
-    @RequestMapping(value="/income")
+    @RequestMapping(value = "/accounts", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomes(){
-
-        return ok(incomeRepository.findAll());
-
+    public ResponseEntity<?> getAccounts() {
+        return ok(accountRepository.findAll());
     }
 
-    @RequestMapping(value="/income/{incomeCategory}")
+    @RequestMapping(value = "/accounts/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> getIncomesByIncomeCategory(@PathVariable String incomeCategory){
+    public ResponseEntity<?> getAccount(@PathVariable String id) {
+        return ok(accountRepository.findById(id));
+    }
 
-        //todo null checks here
-        return ok(incomeRepository.findByIncomeCategory(incomeCategoryRepository.findByCategoryName(incomeCategory)));
+    @RequestMapping(value = "/accounts", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> createAccountWithoutType(
+            @PathVariable String accountType,
+            @RequestBody Account account) {
 
+        return ok(accountRepository.save(account));
+    }
+
+    @RequestMapping(value = "/accounts/accounttype/{typeId}", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> createAccountWithType(
+            @PathVariable String accountType,
+            @RequestBody Account account) {
+
+        return ok(accountRepository.save(account));
+    }
+
+    @RequestMapping(value = "/accounts/accounttype/{typeId}", method = RequestMethod.PUT, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<?> updateAccount(@PathVariable String typeId,
+                                           @RequestBody Account account) {
+
+        accountTypeRepository.findById(typeId).ifPresent(account::setAccountType);
+        return ok(accountRepository.save(account));
+    }
+
+    @RequestMapping(value = "/accounts/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deleteAccount(@PathVariable String id) {
+
+        accountRepository.deleteById(id);
+        return ok();
+    }
+
+    @RequestMapping(value = "/accounts", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deleteAccounts() {
+
+        accountRepository.deleteAll();
+        return ok();
     }
 }

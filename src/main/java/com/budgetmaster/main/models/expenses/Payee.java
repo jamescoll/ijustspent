@@ -1,21 +1,22 @@
 package com.budgetmaster.main.models.expenses;
 
+import com.budgetmaster.main.models.BaseDocument;
 import lombok.*;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
-public class Payee {
+@Document(collection = "payees")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Payee extends BaseDocument {
 
-    @Id
-    @Getter
-    private String id;
+    private String name;
+    private String accountNumber;
+    private String phoneNumber;
+    private String website;
+    private String note;
 
-    @Getter
-    @Setter
-    private String description;
-
-    public Payee(String description) {
-        this.description = description;
-    }
 }

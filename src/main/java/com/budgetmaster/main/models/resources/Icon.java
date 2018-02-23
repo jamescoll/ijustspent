@@ -1,35 +1,20 @@
 package com.budgetmaster.main.models.resources;
 
 
-import lombok.Getter;
-import org.springframework.data.annotation.Id;
+import com.budgetmaster.main.models.BaseDocument;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@EqualsAndHashCode(callSuper = false)
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@Document(collection = "icons")
+public class Icon extends BaseDocument {
 
-import java.util.Date;
-
-public abstract class Icon {
-
-  @Id
-  @Getter
-  String id;
-
-  @Getter
-  Date createStamp = new Date();
-
-  //todo find out why these guys don't work - something to do with how @value works
-  @Getter
-  //@Value("${homebudget.schemaversion}")
-  String schemaVersion = "2.0.0";
-
-
-  //todo find out what this guy is
-  @Getter
- // @Value("${homebudget.partitionkey}")
-  String partitionKey = "1";
-
-  @Getter
-  private String documentType = this.getClass().getName();
-
-
+    private String iconName;
+    private String iconCategory;
+    private String iconLocation;
 
 }

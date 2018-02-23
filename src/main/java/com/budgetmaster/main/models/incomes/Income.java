@@ -1,43 +1,25 @@
 package com.budgetmaster.main.models.incomes;
 
+import com.budgetmaster.main.models.BaseDocument;
+import com.budgetmaster.main.models.accounts.Account;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
 @Document(collection = "incomes")
-public class Income {
+@Getter
+@Setter
+@AllArgsConstructor
+public class Income extends BaseDocument {
 
-    @Id
-    @Getter
-    private String id;
-
-    @Getter
-    @Setter
-    private String description;
-
-    @Getter
-    @Setter
+    private IncomeCategory incomeCategory;
     private Date date;
-
-    @Getter
-    @Setter
     private BigDecimal amount;
-
-    @Getter
-    @Setter
+    private Account account;
     private String note;
 
-    @Getter
-    @Setter
-    private IncomeCategory incomeCategory;
-
-    //TODO push this into a currency class
-    @Getter
-    @Setter
-    private String currency;
 }
