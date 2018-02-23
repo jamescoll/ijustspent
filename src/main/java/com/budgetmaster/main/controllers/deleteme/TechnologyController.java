@@ -1,8 +1,8 @@
-package com.jamesye.starter.api.web;
+package com.budgetmaster.main.controllers.deleteme;
 
 import com.google.common.collect.Maps;
 import org.springframework.web.bind.annotation.*;
-import com.jamesye.starter.api.dto.Technology;
+import com.budgetmaster.main.api.dto.Technology;
 
 import java.util.Map;
 

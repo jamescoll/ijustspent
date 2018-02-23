@@ -1,4 +1,4 @@
-package com.jamesye.starter.api.dto;
+package com.budgetmaster.main.models.deleteme;
 
 public class Technology {
 
