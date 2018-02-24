@@ -70,3 +70,7 @@ Jwt and token attaching on front-end - get authentication fully and functioning 
 ## Milestone 0.0.13
 Found a fully working JWT implementatoin with mongo that does ALL the things.. thank fuck
 https://github.com/vlsidlyarevich/Spring-Boot-MongoDB-JWT
+
+## Milestone 0.0.14
+Committed implementation of JWT but not quite working yet. Need to refactor BasicUserService so that it returns only one
+user - this requires a mongoclient and this kind of code https://stackoverflow.com/questions/30625380/find-in-mongocollectiondocument

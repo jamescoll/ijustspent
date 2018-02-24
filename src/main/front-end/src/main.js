@@ -23,7 +23,7 @@ Axios.interceptors.response.use(
   })
 Axios.interceptors.request.use(function (config) {
   const token = sessionStorage.getItem('auth_token')
-  config.headers.Authorization = token ? `${token}` : ''
+  config.headers.common['x-auth-token'] = token ? `${token}` : ''
   return config
 })
 Vue.$http = Axios
