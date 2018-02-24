@@ -33,7 +33,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -62,10 +61,6 @@ public class AuthenticationControllerTests {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    @Autowired
-    private TokenService tokenService;
-
-    private String token;
 
     @Autowired
     void setConverters(HttpMessageConverter<?>[] converters) {
@@ -96,8 +91,6 @@ public class AuthenticationControllerTests {
         testUser.setAccountNonExpired(true);
 
         this.userService.create(testUser);
-
-        token = tokenService.getToken("TestUser", "TestPassword");
 
     }
 
