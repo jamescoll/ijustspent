@@ -74,3 +74,10 @@ https://github.com/vlsidlyarevich/Spring-Boot-MongoDB-JWT
 ## Milestone 0.0.14
 Committed implementation of JWT but not quite working yet. Need to refactor BasicUserService so that it returns only one
 user - this requires a mongoclient and this kind of code https://stackoverflow.com/questions/30625380/find-in-mongocollectiondocument
+
+## Milestone 0.0.15
+Authentication with bcrypt storing encrypted passwords now works. unit test
+added to test AuthenticationController. Auth is now 'good enough' to focus on something
+else. Later on an admin window for adding roles and users will be necessary but not now.
+Next focus on organizing the logic in the back end, tidying up the code, putting code headers on and static values
+and then get working on the Front end where the real fun will be
