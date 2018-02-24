@@ -14,50 +14,36 @@ export default {
   user: {
     authenticated: false
   },
-  login (credentials, redirect) {
+  signup (credentials, redirect) {
     return new Promise((resolve, reject) => {
       Vue.$http.post('signup', credentials).then(response => {
         console.log(response.data)
-        this.authorize(response.data)
+        console.log('authorizing after signup')
+        this.login(response.data)
         this.user.authenticated = true
         if (redirect) {
           router.push(redirect)
         }
       }
       ).catch((error) => {
-        console.log('unauthorized' + error)
+        console.log('failed to signup' + error)
       })
     })
   },
-  authorize (data) {
+  login (credentials, redirect) {
     return new Promise((resolve, reject) => {
-      Vue.$http.post('auth', data).then(response => {
+      Vue.$http.post('auth', credentials).then(response => {
+        console.log('authorizing after login')
         sessionStorage.setItem('auth_token', response.data.token)
         console.log(response.data.token)
         this.user.authenticated = true
       }
         ).catch((error) => {
-          console.log('unauthorized' + error)
+          console.log('failed to login' + error)
         })
     })
   },
-   // todo this now doesn't work... copy login here this is a placeholder which is the same as sign-in - in fact, it should be sending user state to the back-end
-  signup (credentials, redirect) {
-    return new Promise((resolve, reject) => {
-      Vue.$http.post('signup', credentials).then(response => {
-        sessionStorage.setItem('auth_token', response.headers.authorization)
-        this.user.authenticated = true
-        if (redirect) {
-          router.push(redirect)
-        }
-      }
-      ).catch((error) => {
-        reject(error)
-      })
-    })
-  },
   logout () {
-    // todo this is connected to localStorage but the other to sessionStorage resolve later
     sessionStorage.removeItem('auth_token')
     this.user.authenticated = false
     router.push('/')
@@ -68,6 +54,7 @@ export default {
       this.user.authenticated = true
     } else {
       this.user.authenticated = false
+      router.push('login')
     }
   },
   getAuthHeader () {

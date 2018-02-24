@@ -11,6 +11,7 @@ import HighchartsPie from '@/components/charts/HighchartsPie'
 import HighchartsBar from '@/components/charts/HighchartsBar'
 import PayeeForm from '@/components/forms/PayeeForm'
 import Login from '@/components/login/Login'
+import SignUp from '@/components/login/SignUp'
 
 Vue.use(Router)
 
@@ -76,6 +77,11 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp
     }
   ]
 })

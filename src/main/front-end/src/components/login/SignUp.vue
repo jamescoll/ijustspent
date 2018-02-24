@@ -1,8 +1,8 @@
 
   <template>
     <div class="col-sm-4 col-sm-offset-4">
-      <h2>Log In</h2>
-      <p>Test Login</p>
+      <h2>Sign Up</h2>
+      <p>Test Sign Up</p>
       <div class="alert alert-danger" v-if="error">
         <p>{{ error }}</p>
       </div>
@@ -22,12 +22,12 @@
           v-model="credentials.password"
         >
       </div>
-      <button class="btn btn-primary" @click="submit()">Access</button>
+      <button class="btn btn-primary" @click="submit()">Sign-Up</button>
     </div>
   </template>
 
   <script>
-  import loginservice from '../../services/authorization/authorizationservice'
+  import authorizationservice from '../../services/authorization/authorizationservice'
 
   export default {
 
@@ -48,7 +48,12 @@
           username: this.credentials.username,
           password: this.credentials.password
         }
-        loginservice.signup(credentials, this.$route.query.redirect)
+        console.log(credentials)
+        authorizationservice.signup(credentials, this.$route.query.redirect)
+      },
+      logout () {
+        console.log('logging out')
+        authorizationservice.logout()
       }
     }
 
