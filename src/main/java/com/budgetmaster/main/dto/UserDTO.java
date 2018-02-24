@@ -1,8 +1,10 @@
 package com.budgetmaster.main.dto;
 
+import lombok.AllArgsConstructor;
+
 import java.io.Serializable;
 
-
+@AllArgsConstructor
 public class UserDTO implements Serializable {
 
     private static final long serialVersionUID = 91901774547107674L;

@@ -1,4 +1,4 @@
-package com.budgetmaster.main.controllers;
+package com.budgetmaster.main.controllers.expenses;
 
 import com.budgetmaster.main.Application;
 import com.budgetmaster.main.models.expenses.Payee;

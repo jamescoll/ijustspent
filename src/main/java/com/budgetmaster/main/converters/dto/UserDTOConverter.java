@@ -17,6 +17,8 @@ public class UserDTOConverter implements Converter<UserDTO, User> {
         final User user = new User();
 
         user.setUsername(dto.getUsername());
+        //todo reflect on whether this is the best place for this..
+        //maybe in create on the service may be better
         user.setPassword(PasswordHelper.hashPassword(dto.getPassword()));
         user.setAccountNonExpired(false);
         user.setCredentialsNonExpired(false);
