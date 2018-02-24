@@ -56,11 +56,5 @@ export default {
       this.user.authenticated = false
       router.push('login')
     }
-  },
-  getAuthHeader () {
-    return {
-      // todo i don't think this method is used
-      'Authorization': sessionStorage.getItem('auth_token')
-    }
   }
 }

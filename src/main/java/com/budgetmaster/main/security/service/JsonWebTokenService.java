@@ -2,6 +2,7 @@ package com.budgetmaster.main.security.service;
 
 import com.budgetmaster.main.exceptions.model.ServiceException;
 import com.budgetmaster.main.models.security.User;
+import com.budgetmaster.main.security.helpers.PasswordHelper;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -38,7 +39,8 @@ public class JsonWebTokenService implements TokenService {
         }
         final User user = (User) userDetailsService.loadUserByUsername(username);
         Map<String, Object> tokenData = new HashMap<>();
-        if (password.equals(user.getPassword())) {
+        //password.equals(PasswordHelper.user.getPassword()
+        if (PasswordHelper.checkPassword(password, user.getPassword())) {
             tokenData.put("clientType", "user");
             tokenData.put("userID", user.getId());
             tokenData.put("username", user.getUsername());
@@ -52,6 +54,7 @@ public class JsonWebTokenService implements TokenService {
             return jwtBuilder.signWith(SignatureAlgorithm.HS512, tokenKey).compact();
 
         } else {
+            System.out.println("password comparison failed");
             throw new ServiceException("Authentication error", this.getClass().getName());
         }
     }
