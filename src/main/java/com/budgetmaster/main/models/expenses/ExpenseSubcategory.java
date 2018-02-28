@@ -6,7 +6,7 @@ import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@EqualsAndHashCode
+//@EqualsAndHashCode
 @ToString
 @Document(collection = "expensesubcategories")
 @Getter
@@ -17,4 +17,8 @@ public class ExpenseSubcategory extends BaseDocument {
     private String subcategoryName;
     private ExpenseCategory expenseCategory;
     private Icon icon;
+
+    {
+        this.version = "1";
+    }
 }

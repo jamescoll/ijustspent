@@ -1,31 +1,41 @@
 package com.budgetmaster.main.models;
 
 
+import com.budgetmaster.main.models.security.User;
+import com.budgetmaster.main.security.helpers.UserHelper;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class BaseDocument {
+public class BaseDocument implements Serializable {
 
     @Id
     @Getter
     String id;
 
     @Getter
-    final Date createStamp = new Date();
+    Date createStamp;
 
     @Getter
-    final String schemaVersion = "1.0.0";
+    @Setter
+    protected String version;
 
     @Getter
-    final String partitionKey = "1";
+    String documentType;
 
     @Getter
-    final private String documentType = this.getClass().getSimpleName();
+    @Setter
+    protected User user;
+
+    protected BaseDocument(){
+
+        this.createStamp = new Date();
+        this.documentType = this.getClass().getSimpleName();
+
+    }
 
 
 }

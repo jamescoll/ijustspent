@@ -6,7 +6,7 @@
 
 <script>
   import service from '../../services/expenses/payeeservice'
-  import loginservice from '../../services/authorization/authorizationservice'
+  // import loginservice from '../../services/authorization/authorizationservice'
 
   export default {
     name: 'add-payee-form',
@@ -26,9 +26,7 @@
       }
     },
     mounted: function () {
-      if (loginservice.checkAuth()) {
-        this.doTheThing()
-      }
+      this.doTheThing()
     },
     methods: {
       doTheThing () {

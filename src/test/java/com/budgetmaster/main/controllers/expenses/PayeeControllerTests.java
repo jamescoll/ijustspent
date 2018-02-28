@@ -2,7 +2,13 @@ package com.budgetmaster.main.controllers.expenses;
 
 import com.budgetmaster.main.Application;
 import com.budgetmaster.main.models.expenses.Payee;
+import com.budgetmaster.main.models.security.Authority;
+import com.budgetmaster.main.models.security.User;
 import com.budgetmaster.main.repositories.expenses.PayeeRepository;
+import com.budgetmaster.main.repositories.security.UserRepository;
+import com.budgetmaster.main.security.helpers.PasswordHelper;
+import com.budgetmaster.main.security.helpers.UserHelper;
+import com.budgetmaster.main.services.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +50,7 @@ public class PayeeControllerTests {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
+
     private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
 
     private MockMvc mockMvc;
@@ -53,6 +60,7 @@ public class PayeeControllerTests {
     private Payee payee;
 
     private List<Payee> payeeList = new ArrayList<>();
+
 
     @Autowired
     void setConverters(HttpMessageConverter<?>[] converters) {
@@ -75,6 +83,9 @@ public class PayeeControllerTests {
         payee = payeeRepository.save(new Payee("Tom Jones", "1234-4321-1234-4321", "212-2345432", "www.tj.com", "Note about TJ account"));
         payeeList.add(payeeRepository.save(new Payee("Tate and Sons", "4234-4321-4234-4321", "101-2345432", "www.tateandsons.com", "Note about tate account")));
         payeeList.add(payeeRepository.save(new Payee("Bank Co", "5234-5321-5234-5321", "333-2345432", "www.bankco.com", "Note about bank co")));
+
+
+
     }
 
     @Test
@@ -84,8 +95,7 @@ public class PayeeControllerTests {
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.id", is(this.payee.getId())))
         .andExpect(jsonPath("$.createStamp", is(this.payee.getCreateStamp().getTime())))
-        .andExpect(jsonPath("$.schemaVersion", is(this.payee.getSchemaVersion())))
-        .andExpect(jsonPath("$.partitionKey", is(this.payee.getPartitionKey())))
+        .andExpect(jsonPath("$.version", is(this.payee.getVersion())))
         .andExpect(jsonPath("$.name", is(this.payee.getName())))
         .andExpect(jsonPath("$.accountNumber", is(this.payee.getAccountNumber())))
         .andExpect(jsonPath("$.phoneNumber", is(this.payee.getPhoneNumber())))
@@ -134,8 +144,7 @@ public class PayeeControllerTests {
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.id", is(this.payee.getId())))
         .andExpect(jsonPath("$.createStamp", is(this.payee.getCreateStamp().getTime())))
-        .andExpect(jsonPath("$.schemaVersion", is(this.payee.getSchemaVersion())))
-        .andExpect(jsonPath("$.partitionKey", is(this.payee.getPartitionKey())))
+        .andExpect(jsonPath("$.version", is(this.payee.getVersion())))
         .andExpect(jsonPath("$.name", is("Mary")))
         .andExpect(jsonPath("$.accountNumber", is("123123")))
         .andExpect(jsonPath("$.phoneNumber", is(this.payee.getPhoneNumber())))
@@ -178,6 +187,7 @@ public class PayeeControllerTests {
 
     @After
     public void clearUp() {
-        this.payeeRepository.deleteAll();
+       this.payeeRepository.deleteAll();
+
     }
 }

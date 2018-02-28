@@ -3,6 +3,7 @@ package com.budgetmaster.main.models.accounts;
 
 import com.budgetmaster.main.models.BaseDocument;
 import com.budgetmaster.main.models.resources.Icon;
+import com.budgetmaster.main.security.helpers.UserHelper;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,5 +19,9 @@ public class AccountType extends BaseDocument {
 
     private String type;
     private Icon icon;
+
+    {
+        this.version = "1";
+    }
 
 }

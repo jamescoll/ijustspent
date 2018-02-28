@@ -81,3 +81,8 @@ added to test AuthenticationController. Auth is now 'good enough' to focus on so
 else. Later on an admin window for adding roles and users will be necessary but not now.
 Next focus on organizing the logic in the back end, tidying up the code, putting code headers on and static values
 and then get working on the Front end where the real fun will be
+
+## Milestone 0.0.16
+Fixed issue with user null dup exception by removing unique constraint on user. However, a unique constraint on user is needed
+so need to work out some way to filter users on create so this doesn't occur. don't know what best practice is but fuck it...this
+was very annoying. unit test this stuff next.

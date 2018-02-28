@@ -17,4 +17,8 @@ public class Icon extends BaseDocument {
     private String iconCategory;
     private String iconLocation;
 
+    {
+        this.version = "1";
+    }
+
 }

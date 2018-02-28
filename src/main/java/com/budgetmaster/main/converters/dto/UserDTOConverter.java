@@ -17,18 +17,13 @@ public class UserDTOConverter implements Converter<UserDTO, User> {
         final User user = new User();
 
         user.setUsername(dto.getUsername());
-        //todo reflect on whether this is the best place for this..
-        //maybe in create on the service may be better
-        user.setPassword(PasswordHelper.hashPassword(dto.getPassword()));
+        user.setPassword(dto.getPassword());
         user.setAccountNonExpired(false);
         user.setCredentialsNonExpired(false);
         user.setEnabled(true);
 
         //todo this is added just to push in a default role
-        //get rid of this and replace with actual role logic
-        //something like ROLE_STANDARD
-        //in fact in signup we will want a front-end mode and an admin mode (in the latter we select roles or apply them)
-        //this for later
+        //the fix here is to pass in authorities for a user in the dto
         List<Authority> authorities = new ArrayList<>();
         authorities.add(Authority.ROLE_USER);
         user.setAuthorities(authorities);

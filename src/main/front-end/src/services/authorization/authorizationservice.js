@@ -19,7 +19,7 @@ export default {
       Vue.$http.post('signup', credentials).then(response => {
         console.log(response.data)
         console.log('authorizing after signup')
-        this.login(response.data)
+        this.login(credentials, redirect)
         this.user.authenticated = true
         if (redirect) {
           router.push(redirect)
@@ -37,6 +37,9 @@ export default {
         sessionStorage.setItem('auth_token', response.data.token)
         console.log(response.data.token)
         this.user.authenticated = true
+        if (redirect) {
+          router.push(redirect)
+        }
       }
         ).catch((error) => {
           console.log('failed to login' + error)
@@ -44,9 +47,16 @@ export default {
     })
   },
   logout () {
-    sessionStorage.removeItem('auth_token')
-    this.user.authenticated = false
-    router.push('/')
+    return new Promise((resolve, reject) => {
+      Vue.$http.post('auth/signout').then(response => {
+        console.log('signing out')
+        sessionStorage.removeItem('auth_token')
+        this.user.authenticated = false
+      }
+        ).catch((error) => {
+          console.log('failed to logout' + error)
+        })
+    })
   },
   checkAuth () {
     var jwt = sessionStorage.getItem('auth_token')

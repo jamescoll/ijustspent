@@ -17,4 +17,8 @@ public class IncomeCategory extends BaseDocument {
     private String categoryName;
     private Icon icon;
 
+    {
+        this.version = "1";
+    }
+
 }

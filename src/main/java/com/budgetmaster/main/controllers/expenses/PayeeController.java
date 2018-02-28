@@ -3,6 +3,7 @@ package com.budgetmaster.main.controllers.expenses;
 import com.budgetmaster.main.controllers.BaseController;
 import com.budgetmaster.main.models.expenses.Payee;
 import com.budgetmaster.main.repositories.expenses.PayeeRepository;
+import com.budgetmaster.main.security.helpers.UserHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +41,7 @@ public class PayeeController extends BaseController {
     @RequestMapping(value = "/payees", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> createPayee(@RequestBody Payee payee) {
-
+        payee.setUser(UserHelper.getLoggedInUser());
         return created(payeeRepository.save(payee));
     }
 

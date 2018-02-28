@@ -22,4 +22,8 @@ public class Income extends BaseDocument {
     private Account account;
     private String note;
 
+    {
+        this.version = "1";
+    }
+
 }

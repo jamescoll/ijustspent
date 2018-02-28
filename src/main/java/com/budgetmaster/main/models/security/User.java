@@ -1,20 +1,22 @@
 package com.budgetmaster.main.models.security;
 
+
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.util.Collection;
 import java.util.List;
 
 @NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity implements UserDetails {
 
     private static final long serialVersionUID = 7954325925563724664L;
 
     private List<Authority> authorities;
-    @Indexed(unique = true)
     private String username;
     private String password;
     private boolean accountNonExpired;

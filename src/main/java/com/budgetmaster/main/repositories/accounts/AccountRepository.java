@@ -16,6 +16,5 @@ public interface AccountRepository extends MongoRepository<Account, String> {
 
     List<Account> findByIncludeInTotals(boolean includeInTotals);
 
-    List<Account> findBySchemaVersion(String schemaVersion);
 
 }

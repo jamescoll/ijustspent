@@ -1,14 +1,13 @@
 package com.budgetmaster.main.services;
 
-import com.budgetmaster.main.exceptions.model.UserNotFoundException;
 import com.budgetmaster.main.models.security.User;
 import com.budgetmaster.main.repositories.security.UserRepository;
+import com.budgetmaster.main.security.helpers.PasswordHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -24,6 +23,7 @@ public class BasicUserService implements UserService {
     @Override
     public User create(final User user) {
         user.setCreatedAt(String.valueOf(LocalDateTime.now()));
+        user.setPassword(PasswordHelper.hashPassword(user.getPassword()));
         return repository.save(user);
     }
 
@@ -48,7 +48,6 @@ public class BasicUserService implements UserService {
 
     @Override
     public User update(final String id, final User user) {
-        user.setId(id);
 
         //todo this is terrible - refactor this
         User saved = null;

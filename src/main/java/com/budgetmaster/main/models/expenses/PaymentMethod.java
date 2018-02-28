@@ -16,4 +16,8 @@ public class PaymentMethod extends BaseDocument {
     private String description;
     private Icon icon;
 
+    {
+        this.version = "1";
+    }
+
 }

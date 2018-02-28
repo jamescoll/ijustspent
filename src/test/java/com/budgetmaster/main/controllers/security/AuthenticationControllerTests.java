@@ -61,6 +61,8 @@ public class AuthenticationControllerTests {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
+    private User testUser;
+
 
     @Autowired
     void setConverters(HttpMessageConverter<?>[] converters) {
@@ -78,7 +80,7 @@ public class AuthenticationControllerTests {
     public void setUp() throws Exception {
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
 
-        User testUser = new User();
+        testUser = new User();
 
         testUser.setUsername("TestUser");
         testUser.setPassword(PasswordHelper.hashPassword("TestPassword"));

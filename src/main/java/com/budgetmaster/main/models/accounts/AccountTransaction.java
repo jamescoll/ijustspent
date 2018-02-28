@@ -2,6 +2,7 @@ package com.budgetmaster.main.models.accounts;
 
 
 import com.budgetmaster.main.models.BaseDocument;
+import com.budgetmaster.main.security.helpers.UserHelper;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,5 +21,9 @@ public class AccountTransaction extends BaseDocument {
     private Account account;
     private BigDecimal amount;
     private Date transactionDate;
+
+    {
+        this.version = "1";
+    }
 
 }

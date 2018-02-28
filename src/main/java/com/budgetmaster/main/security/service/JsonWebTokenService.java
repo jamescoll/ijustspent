@@ -39,7 +39,6 @@ public class JsonWebTokenService implements TokenService {
         }
         final User user = (User) userDetailsService.loadUserByUsername(username);
         Map<String, Object> tokenData = new HashMap<>();
-        //password.equals(PasswordHelper.user.getPassword()
         if (PasswordHelper.checkPassword(password, user.getPassword())) {
             tokenData.put("clientType", "user");
             tokenData.put("userID", user.getId());
