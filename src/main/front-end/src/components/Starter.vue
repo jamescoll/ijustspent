@@ -1,77 +1,29 @@
 <template>
-  <div class="starter">
-    <h1>Welcome to <code>{{ starter }}</code> starter</h1>
+  <div class="home">
+    <h1> Budgetmaster </h1>
     <ul class="list-unstyled">
-      <li class="media vuejs" @click="open('vuejs')">
-        <img class="d-flex" src="../assets/images/vue-logo.png">
+      <li class="media table" @click="open('budgettable')">
+        <img class="d-flex" src="../assets/images/table.png">
         <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="vuejs">Vue.js</router-link></h5>
-          The Progressive JavaScript Framework
+          <h5 class="mt-0 mb-1"><router-link to="budgettable">Table View</router-link></h5>
+          View expenses in traditional tabular format.
         </div>
       </li>
-      <li class="media bootstrap my-4" @click="open('bootstrap')">
-        <img class="d-flex" src="../assets/images/bootstrap-stack-logo.png">
+      <li class="media chart my-4" @click="open('budgetchart')">
+        <img class="d-flex" src="../assets/images/chart.png">
         <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="bootstrap">Bootstrap</router-link></h5>
-          The most popular HTML, CSS, and JS library in the world.
+          <h5 class="mt-0 mb-1"><router-link to="budgetchart">Charts View</router-link></h5>
+          View visualizations of your expensives by category.
         </div>
       </li>
-      <li class="media spring-boot" @click="open('spring-boot')">
-        <img class="d-flex" src="../assets/images/spring-boot-logo.png">
+      <li class="media table" @click="open('budgetedit')">
+        <img class="d-flex" src="../assets/images/table.png">
         <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="spring-boot">Spring Boot</router-link></h5>
-          Takes an opinionated view of building production-ready Spring applications.
+          <h5 class="mt-0 mb-1"><router-link to="budgetedit">Edit View</router-link></h5>
+          Add expenses, accounts, payees... 
         </div>
       </li>
-       <li class="" @click="open('chart')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="chart">D3 simple line</router-link></h5>
-          A d3 simple line chart
-        </div>
-      </li>
-       <li class="" @click="open('d3-circle')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="d3-circle">D3 simple circle</router-link></h5>
-          A d3 simple circle
-        </div>
-      </li>
-      <li class="" @click="open('adjustable-circle')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="adjustable-circle">D3 adjustable circle</router-link></h5>
-          A d3 adjustable circle
-        </div>
-      </li>
-      <li class="" @click="open('pie')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="pie">D3 pie chart</router-link></h5>
-          A d3 pie chart
-        </div>
-      </li>
-      <li class="" @click="open('expense-chart')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="expense-chart">Highcharts Pie Chart</router-link></h5>
-          A Highcharts pie chart
-        </div>
-      </li>
-      <li class="" @click="open('expense-bar-chart')">
-      <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-      <div class="media-body ml-4">
-        <h5 class="mt-0 mb-1"><router-link to="expense-bar-chart">Highcharts Bar Chart</router-link></h5>
-        A Highcharts bar chart
-      </div>
-    </li>
-      <li class="" @click="open('add-payee-form')">
-        <!--img class="d-flex" src="../assets/images/spring-boot-logo.png"-->
-        <div class="media-body ml-4">
-          <h5 class="mt-0 mb-1"><router-link to="add-payee-form">Payee Form</router-link></h5>
-          Add Payee Form
-        </div>
-      </li>
+ 
     </ul>
   </div>
 </template>
@@ -81,12 +33,11 @@ export default {
   name: 'starter',
   data () {
     return {
-      starter: 'vuejs.spring-boot'
     }
   },
   methods: {
-    open (technology) {
-      this.$router.push(technology)
+    open (homecard) {
+      this.$router.push(homecard)
     }
   }
 }
@@ -100,7 +51,7 @@ h1 code {
   border-radius: 0.5rem;
 }
 
-.starter a {
+.home a {
   color: #333;
 }
 
@@ -121,15 +72,15 @@ ul li {
   width: 64px;
 }
 
-.media.vuejs:hover {
+.media.table:hover {
   background-color: #e0fbef;
 }
 
-.media.bootstrap:hover {
+.media.chart:hover {
   background-color: #e7dcf9;
 }
 
-.media.spring-boot:hover {
+.media.edit-boot:hover {
   background-color: #eaf7e2;
 }
 </style>
