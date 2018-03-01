@@ -1,6 +1,7 @@
 package com.budgetmaster.main.controllers.security;
 
 import com.budgetmaster.main.Application;
+import com.budgetmaster.main.dto.LoginDTO;
 import com.budgetmaster.main.dto.UserDTO;
 import com.budgetmaster.main.models.security.Authority;
 import com.budgetmaster.main.models.security.User;
@@ -15,6 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -61,7 +63,11 @@ public class AuthenticationControllerTests {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
+    @Autowired
+    private TokenService tokenService;
+
     private User testUser;
+
 
 
     @Autowired
@@ -83,7 +89,7 @@ public class AuthenticationControllerTests {
         testUser = new User();
 
         testUser.setUsername("TestUser");
-        testUser.setPassword(PasswordHelper.hashPassword("TestPassword"));
+        testUser.setPassword("TestPassword");
         testUser.setEnabled(true);
         testUser.setCredentialsNonExpired(true);
         testUser.setAccountNonLocked(true);
@@ -94,17 +100,21 @@ public class AuthenticationControllerTests {
 
         this.userService.create(testUser);
 
+
     }
 
     @Test
     public void testAuthenticateBasic() throws Exception{
-        String userDTOJson = json(new UserDTO("TestUser", "TestPassword"));
+        String userDTOJson = json(new LoginDTO("TestUser", "TestPassword"));
 
-        mockMvc.perform(post("/api/auth/")
+        MvcResult result = mockMvc.perform(post("/api/auth/")
                 .contentType(contentType)
                 .content(userDTOJson))
                 .andExpect(content().contentType(contentType))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andReturn();
+
+        System.out.println("******************************");
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test

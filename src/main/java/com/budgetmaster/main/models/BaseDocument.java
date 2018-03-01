@@ -2,7 +2,6 @@ package com.budgetmaster.main.models;
 
 
 import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.security.helpers.UserHelper;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;

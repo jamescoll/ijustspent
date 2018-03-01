@@ -7,7 +7,7 @@ import com.budgetmaster.main.models.security.User;
 import com.budgetmaster.main.repositories.expenses.PayeeRepository;
 import com.budgetmaster.main.repositories.security.UserRepository;
 import com.budgetmaster.main.security.helpers.PasswordHelper;
-import com.budgetmaster.main.security.helpers.UserHelper;
+import com.budgetmaster.main.services.LoggedInUserService;
 import com.budgetmaster.main.services.UserService;
 import org.junit.After;
 import org.junit.Before;
@@ -48,7 +48,16 @@ public class PayeeControllerTests {
     private PayeeRepository payeeRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private WebApplicationContext webApplicationContext;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private LoggedInUserService loggedInUserService;
 
 
     private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
@@ -60,6 +69,8 @@ public class PayeeControllerTests {
     private Payee payee;
 
     private List<Payee> payeeList = new ArrayList<>();
+
+    private User testUser;
 
 
     @Autowired
@@ -84,7 +95,23 @@ public class PayeeControllerTests {
         payeeList.add(payeeRepository.save(new Payee("Tate and Sons", "4234-4321-4234-4321", "101-2345432", "www.tateandsons.com", "Note about tate account")));
         payeeList.add(payeeRepository.save(new Payee("Bank Co", "5234-5321-5234-5321", "333-2345432", "www.bankco.com", "Note about bank co")));
 
+        this.userRepository.deleteAll();
 
+        testUser = new User();
+
+        testUser.setUsername("TestUser");
+        testUser.setPassword("TestPassword");
+        testUser.setEnabled(true);
+        testUser.setCredentialsNonExpired(true);
+        testUser.setAccountNonLocked(true);
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(Authority.ROLE_USER);
+        testUser.setAuthorities(authorities);
+        testUser.setAccountNonExpired(true);
+
+        testUser = this.userService.create(testUser);
+
+        loggedInUserService.setLoggedInUser(testUser.getUsername());
 
     }
 
@@ -100,6 +127,8 @@ public class PayeeControllerTests {
         .andExpect(jsonPath("$.accountNumber", is(this.payee.getAccountNumber())))
         .andExpect(jsonPath("$.phoneNumber", is(this.payee.getPhoneNumber())))
         .andExpect(jsonPath("$.website", is(this.payee.getWebsite())))
+                //todo work out how to determine attached user from jsonPath data
+        //.andExpect(jsonPath("$.user.id", is(this.testUser.getId())))
         .andExpect(jsonPath("$.note", is(this.payee.getNote())));
     }
 
@@ -188,6 +217,7 @@ public class PayeeControllerTests {
     @After
     public void clearUp() {
        this.payeeRepository.deleteAll();
+       this.userRepository.deleteAll();
 
     }
 }

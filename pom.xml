@@ -5,7 +5,7 @@
 
   <groupId>com.budgetmaster</groupId>
   <artifactId>budget-master</artifactId>
-  <version>0.0.15</version>
+  <version>0.0.16</version>
   <packaging>jar</packaging>
 
   <name>Budgetmaster</name>
@@ -99,7 +99,7 @@
           <addResources>true</addResources>
 
             <jvmArguments>
-              -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
+              -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
             </jvmArguments>
 
         </configuration>

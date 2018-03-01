@@ -22,9 +22,17 @@ public class BasicUserService implements UserService {
 
     @Override
     public User create(final User user) {
-        user.setCreatedAt(String.valueOf(LocalDateTime.now()));
-        user.setPassword(PasswordHelper.hashPassword(user.getPassword()));
-        return repository.save(user);
+        User newUser = repository.findByUsername(user.getUsername());
+
+        if(newUser == null) {
+            user.setCreatedAt(String.valueOf(LocalDateTime.now()));
+            user.setUpdatedAt(String.valueOf(LocalDateTime.now()));
+            user.setPassword(PasswordHelper.hashPassword(user.getPassword()));
+            return repository.save(user);
+        }
+
+        return newUser;
+
     }
 
     //todo this is the wrong way to do this and not functional - work out the functional way

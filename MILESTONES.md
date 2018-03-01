@@ -85,4 +85,4 @@ and then get working on the Front end where the real fun will be
 ## Milestone 0.0.16
 Fixed issue with user null dup exception by removing unique constraint on user. However, a unique constraint on user is needed
 so need to work out some way to filter users on create so this doesn't occur. don't know what best practice is but fuck it...this
-was very annoying. unit test this stuff next.
+was very annoying. unit test this stuff next. This mostly worked out just need to work out field for unit test

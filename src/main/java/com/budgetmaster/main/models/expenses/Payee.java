@@ -1,7 +1,6 @@
 package com.budgetmaster.main.models.expenses;
 
 import com.budgetmaster.main.models.BaseDocument;
-import com.budgetmaster.main.security.helpers.UserHelper;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -22,7 +21,6 @@ public class Payee extends BaseDocument {
 
     {
         this.version = "1";
-
     }
 
 }

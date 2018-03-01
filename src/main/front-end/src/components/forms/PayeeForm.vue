@@ -37,9 +37,6 @@
           website: 'ASDF',
           note: 'ASDF'
         }
-        console.log(tmpPayee)
-        console.log('Calling Get Payees')
-        console.log(service.getPayees())
         console.log('Calling Create Payee')
         service.createPayee(tmpPayee)
         console.log('Calling Create Payee')
@@ -53,9 +50,6 @@
           console.log('Calling Delete Payee for Payee ' + data.id)
           service.deletePayee(data.id)
         })
-       /* this.credentials.username = 'admin'
-        this.credentials.password = 'password'
-        loginservice.login(this.credentials, redirect) */
       }
     }
   }
