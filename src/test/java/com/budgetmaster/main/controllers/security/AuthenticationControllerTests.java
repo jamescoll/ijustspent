@@ -107,14 +107,12 @@ public class AuthenticationControllerTests {
     public void testAuthenticateBasic() throws Exception{
         String userDTOJson = json(new LoginDTO("TestUser", "TestPassword"));
 
-        MvcResult result = mockMvc.perform(post("/api/auth/")
+       mockMvc.perform(post("/api/auth/")
                 .contentType(contentType)
                 .content(userDTOJson))
                 .andExpect(content().contentType(contentType))
-                .andExpect(status().isOk()).andReturn();
+                .andExpect(status().isOk());
 
-        System.out.println("******************************");
-        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test
