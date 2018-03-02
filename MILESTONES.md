@@ -91,4 +91,7 @@ was very annoying. unit test this stuff next. This mostly worked out just need t
 Made front-end less horrible and added placeholders for three of the main areas of functionality. Got rid of a lot of cruddy deleteme methods and left one in place to dynamically load to a table.
 
 ## Milestone 0.0.18
-Completed chart placeholder and fixed incorrect image link.
+Completed chart placeholder and fixed incorrect image link
+
+## Milestone 0.0.19
+Completed edit placeholder and form. Also renamed app to budget.io

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1> Budgetmaster </h1>
+    <h1> Budget.io </h1>
     <ul class="list-unstyled">
       <li class="media table" @click="open('budgettable')">
         <img class="d-flex" src="../assets/images/table.png">

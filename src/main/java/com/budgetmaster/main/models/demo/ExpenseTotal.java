@@ -1,4 +1,4 @@
-package com.budgetmaster.main.models.deleteme;
+package com.budgetmaster.main.models.demo;
 
 import lombok.*;
 

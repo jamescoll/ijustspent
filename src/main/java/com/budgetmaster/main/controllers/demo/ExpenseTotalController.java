@@ -1,6 +1,6 @@
-package com.budgetmaster.main.controllers.deleteme;
+package com.budgetmaster.main.controllers.demo;
 
-import com.budgetmaster.main.models.deleteme.ExpenseTotal;
+import com.budgetmaster.main.models.demo.ExpenseTotal;
 import com.google.common.collect.Maps;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

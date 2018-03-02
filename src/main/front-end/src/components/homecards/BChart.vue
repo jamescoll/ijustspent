@@ -11,7 +11,7 @@
 
 <script>
 import VueHighcharts from 'vue2-highcharts'
-import service from '../../services/deleteme/tempexpenseservice'
+import service from '../../services/demo/demoservice'
 
 const asyncData = {
   series: [{

@@ -14,7 +14,7 @@
             <td>{{entry.name}}</td>
             <td>{{entry.total}}</td>
           </tr>
-        </tbody>  
+        </tbody>
       </table>
       <div class="mt-5">
         <router-link to="/" class="btn btn-primary">Back</router-link>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import service from '../../services/deleteme/tempexpenseservice'
+import service from '../../services/demo/demoservice'
 
 export default {
   name: 'budgettable',
