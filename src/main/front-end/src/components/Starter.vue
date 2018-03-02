@@ -17,13 +17,13 @@
         </div>
       </li>
       <li class="media table" @click="open('budgetedit')">
-        <img class="d-flex" src="../assets/images/table.png">
+        <img class="d-flex" src="../assets/images/edit.png">
         <div class="media-body ml-4">
           <h5 class="mt-0 mb-1"><router-link to="budgetedit">Edit View</router-link></h5>
-          Add expenses, accounts, payees... 
+          Add expenses, accounts, payees...
         </div>
       </li>
- 
+
     </ul>
   </div>
 </template>

@@ -90,3 +90,5 @@ was very annoying. unit test this stuff next. This mostly worked out just need t
 ## Milestone 0.0.17
 Made front-end less horrible and added placeholders for three of the main areas of functionality. Got rid of a lot of cruddy deleteme methods and left one in place to dynamically load to a table.
 
+## Milestone 0.0.18
+Completed chart placeholder and fixed incorrect image link.
