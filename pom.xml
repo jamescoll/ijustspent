@@ -5,7 +5,7 @@
 
   <groupId>com.budgetmaster</groupId>
   <artifactId>budget-master</artifactId>
-  <version>0.0.18</version>
+  <version>0.0.19</version>
   <packaging>jar</packaging>
 
   <name>Budgetmaster</name>
