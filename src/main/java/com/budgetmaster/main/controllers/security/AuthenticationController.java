@@ -44,7 +44,7 @@ public class AuthenticationController {
         }
     }
 
-    @RequestMapping(value = "/signout", method = RequestMethod.POST)
+    @RequestMapping(value = "/signout", method = RequestMethod.GET)
     public ResponseEntity<?> deauthenticate() {
         final String response = "Logged Out Successfully";
         loggedInUserService.logOut();

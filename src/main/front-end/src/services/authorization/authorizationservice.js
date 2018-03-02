@@ -8,8 +8,6 @@ import Vue from 'vue'
 import Promise from 'bluebird'
 import router from '../../router/'
 
-// todo plugin in signup to a signup url
-
 export default {
   user: {
     authenticated: false
@@ -48,7 +46,7 @@ export default {
   },
   logout () {
     return new Promise((resolve, reject) => {
-      Vue.$http.post('auth/signout').then(response => {
+      Vue.$http.get('auth/signout').then(response => {
         console.log('signing out')
         sessionStorage.removeItem('auth_token')
         this.user.authenticated = false
