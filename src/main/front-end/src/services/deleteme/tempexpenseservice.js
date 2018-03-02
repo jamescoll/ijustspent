@@ -10,5 +10,14 @@ export default {
         reject(error)
       })
     })
+  },
+  getExpenseTotals (description) {
+    return new Promise((resolve, reject) => {
+      Vue.$http.get('/expensetotals/' + description).then(({data}) => {
+        resolve(data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
   }
 }
