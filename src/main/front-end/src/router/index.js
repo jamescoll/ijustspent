@@ -6,6 +6,7 @@ import BEdit from '@/components/homecards/BEdit'
 import BChart from '@/components/homecards/BChart'
 import Login from '@/components/login/Login'
 import SignUp from '@/components/login/SignUp'
+import About from '@/components/homecards/About'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ const router = new Router({
       name: 'budgetchart',
       component: BChart,
       meta: {requiresAuth: true}
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     },
     {
       path: '/login',

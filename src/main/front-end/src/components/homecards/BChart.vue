@@ -3,9 +3,6 @@
     <h1>Chart</h1>
     <vue-highcharts :options='options' ref='lineCharts'></vue-highcharts>
     <button @click='load'>Reload</button>
-    <div class="mt-5">
-      <router-link to="/" class="btn btn-primary">Back</router-link>
-    </div>
   </div>
 </template>
 

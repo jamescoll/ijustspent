@@ -95,3 +95,6 @@ Completed chart placeholder and fixed incorrect image link
 
 ## Milestone 0.0.19
 Completed edit placeholder and form. Also renamed app to budget.io
+
+## Milestone 0.0.20
+Much improved the front-end placeholders by adding navbar, bootstrap grids, logout in appropriate place and others. Will need to add methods to detect whether user is logged in and act appropriately but placeholders are now much better looking

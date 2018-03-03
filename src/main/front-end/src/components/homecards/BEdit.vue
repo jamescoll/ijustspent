@@ -41,9 +41,7 @@
 </button>
     </form>
 
-    <div class="mt-5">
-      <router-link to="/" class="btn btn-primary">Back</router-link>
-    </div>
+
 
   </div>
 </template>

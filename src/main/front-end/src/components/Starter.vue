@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1> Budget.io </h1>
+    <div class="row">
+     <div class="col-sm-2"></div>
+        <div class="col-sm-8">
     <ul class="list-unstyled">
       <li class="media table" @click="open('budgettable')">
         <img class="d-flex" src="../assets/images/table.png">
@@ -24,7 +26,10 @@
         </div>
       </li>
 
-    </ul>
+    </ul></div>
+
+<div class="col-sm-2"></div>
+    </div>
   </div>
 </template>
 
@@ -50,13 +55,16 @@ h1 code {
   background-color: #f4f4f4;
   border-radius: 0.5rem;
 }
-
+.home {
+  margin: auto;
+}
 .home a {
   color: #333;
 }
 
 ul {
   margin-top: 50px;
+
 }
 
 ul li {

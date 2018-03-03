@@ -1,8 +1,10 @@
 
   <template>
-    <div class="col-sm-4 col-sm-offset-4">
-      <h2>Sign Up</h2>
-      <p>Test Sign Up</p>
+  <div class="signup">
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+
       <div class="alert alert-danger" v-if="error">
         <p>{{ error }}</p>
       </div>
@@ -22,8 +24,16 @@
           v-model="credentials.password"
         >
       </div>
-      <button class="btn btn-primary" @click="submit()">Sign-Up</button>
-    </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+          <div class="col-sm-4"><button class="btn btn-primary" @click="submit()">Sign-Up</button></div>
+      <div class="col-sm-4"></div>
+      </div>
+
+      </div>
+      <div class="col-sm-4"></div>
+   </div>
+   </div>
   </template>
 
   <script>
@@ -59,3 +69,13 @@
 
   }
   </script>
+
+<style>
+
+
+.signup {
+  padding: 25px;
+}
+
+
+</style>
