@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>Edit</h1>
+    <div class="row">
+   <div class="col-sm-4"></div>
+   <div class="col-sm-4">
+
+    <h3 class="center">Payee</h3>
     <form v-on:submit.prevent="createPayee">
        <section class="form">
   <div class="form-group">
@@ -36,13 +40,15 @@
 </section>
 <button
   v-on:click="createPayee"
-  class="btn btn-primary">
+  class="btn btn-primary centerBlock">
   Submit
 </button>
     </form>
 
 
-
+   </div>
+    <div class="col-sm-4"></div>
+    </div>
   </div>
 </template>
 
@@ -73,5 +79,13 @@ export default {
 </script>
 
 <style scoped>
-
+.center {
+  text-align:center;
+  padding: 20px;
+}
+.centerBlock {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
 </style>

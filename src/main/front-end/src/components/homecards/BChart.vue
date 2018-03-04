@@ -1,9 +1,14 @@
 <template>
-  <div>
-    <h1>Chart</h1>
+  <div class="row">
+    <div class="col-sm-2"></div>
+   <div class="col-sm-8">
+    <h3 class="center">Chart</h3>
     <vue-highcharts :options='options' ref='lineCharts'></vue-highcharts>
-    <button @click='load'>Reload</button>
-  </div>
+    <button class="centerBlock" @click='load'>Reload</button>
+    </div>
+    <div class="col-sm-2"></div>
+    </div>
+
 </template>
 
 <script>
@@ -69,7 +74,7 @@ export default {
           text: 'Monthly Expenditure'
         },
         subtitle: {
-          text: 'Loading from Back-end'
+          text: 'Separated by Category'
         },
         xAxis: {
           categories: [
@@ -138,5 +143,13 @@ export default {
 </script>
 
 <style scoped>
-
+.center {
+  text-align:center;
+  padding: 20px;
+}
+.centerBlock {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
 </style>

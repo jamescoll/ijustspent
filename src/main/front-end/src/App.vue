@@ -28,7 +28,7 @@
      <div class="dropdown-menu">
           <router-link class="dropdown-item" to="/signup">Sign Up</router-link>
         <router-link class="dropdown-item" to="/login">Log In</router-link>
-       <router-link class="dropdown-item" to="/logout">Log Out</router-link>
+       <router-link v-if="loggedIn" class="dropdown-item" to="/logout">Log Out</router-link>
      </div>
    </li>
 
@@ -44,6 +44,11 @@ import loginservice from './services/authorization/authorizationservice'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      loggedIn: true
+    }
+  },
   methods: {
     logout () {
       console.log('logging out')

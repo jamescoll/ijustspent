@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <div>
-      <h1>Table View</h1>
+
+    <div class="row">
+       <div class="col-sm-2"></div>
+   <div class="col-sm-8">
+      <h3 class="center">January Expenditure</h3>
       <table class="table table-striped">
         <thead class="thead-default">
           <tr>
@@ -16,9 +18,10 @@
           </tr>
         </tbody>
       </table>
+   </div>
+   <div class="col-sm-2"></div></div>
 
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -43,5 +46,13 @@ export default {
 </script>
 
 <style scoped>
-
+.center {
+  text-align:center;
+  padding: 20px;
+}
+.centerBlock {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
 </style>
