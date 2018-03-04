@@ -6,6 +6,7 @@ import App from './App'
 import router from './router'
 import lodash from 'lodash'
 import VueLodash from 'vue-lodash'
+require('bootstrap')
 
 Vue.config.productionTip = false
 Vue.use(VueLodash, lodash)
