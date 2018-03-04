@@ -98,3 +98,7 @@ Completed edit placeholder and form. Also renamed app to budget.io
 
 ## Milestone 0.0.20
 Much improved the front-end placeholders by adding navbar, bootstrap grids, logout in appropriate place and others. Will need to add methods to detect whether user is logged in and act appropriately but placeholders are now much better looking
+
+## Milestone 0.0.21
+Added basic conditional display to logout - it is time to sketch out the model and start to make components - what needs to be done here is to - get a wireframe of the intended UI - create a UML diagram of the model - work out how to communicate between components in vue
+

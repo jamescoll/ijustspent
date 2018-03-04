@@ -39,6 +39,7 @@ public class SecurityConfigTest {
 
     @Test
     public void testOptions() throws Exception {
+        //todo this is currently failing - work out why
         mockMvc.perform( options( "/" ) )
                 .andExpect( status().is2xxSuccessful() )
                 .andExpect( header().string( "Access-Control-Allow-Origin", notNullValue() ) )
@@ -47,7 +48,6 @@ public class SecurityConfigTest {
                 .andExpect( header().string( "Access-Control-Allow-Headers",
                         equalToIgnoringCase( "content-type, x-auth-token, x-requested-with" ) ) )
                 .andExpect( header().string( "Access-Control-Expose-Headers", equalToIgnoringCase( "Location" ) ) )
-                .andExpect( header().string( "Access-Control-Max-Age", notNullValue() ) )
-        ;
+                .andExpect( header().string( "Access-Control-Max-Age", notNullValue() ));
     }
 }
