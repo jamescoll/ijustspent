@@ -35,7 +35,13 @@
                </ul>
            </div>
  </nav>
-    <router-view></router-view>
+ <router-view></router-view>
+<footer class="footer">
+      <div class="container">
+        <span class="text-muted">budget.io</span>
+      </div>
+    </footer>
+
   </div>
 </template>
 
@@ -63,7 +69,7 @@ export default {
 
 #app {
   width: 75%;
-  margin: 120px auto;
+  margin: 25px auto;
 }
 
 p.description {
@@ -71,5 +77,21 @@ p.description {
   border-bottom: 1px solid #eee;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 75%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+
+}
 
 </style>

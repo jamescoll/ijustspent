@@ -102,3 +102,5 @@ Much improved the front-end placeholders by adding navbar, bootstrap grids, logo
 ## Milestone 0.0.21
 Added basic conditional display to logout - it is time to sketch out the model and start to make components - what needs to be done here is to - get a wireframe of the intended UI - create a UML diagram of the model - work out how to communicate between components in vue
 
+## Milestone 0.0.22
+Added panels for entering data into all of the models. There is now a rough and ready - admin entry area. Need to work out how to get conditional loading working - service calls before load but otherwise in good shape
