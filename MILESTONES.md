@@ -104,3 +104,6 @@ Added basic conditional display to logout - it is time to sketch out the model a
 
 ## Milestone 0.0.22
 Added panels for entering data into all of the models. There is now a rough and ready - admin entry area. Need to work out how to get conditional loading working - service calls before load but otherwise in good shape
+
+## Milestone 0.0.23
+Got service working and returning for accounttype. Now it is a question of mapping that to each other account and potentially installing vuex for monitoring app state.

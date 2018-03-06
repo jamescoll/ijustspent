@@ -1,8 +1,37 @@
 <template>
-<div>
-<ul>
-         <li v-for="(data, index) in icons" :key="index">{{ index }}.{{data.iconName}}</li>
-</ul>
+
+ <div>
+    <h3 class="center">Account Type</h3>
+    <form v-on:submit.prevent="createAccountType">
+       <section class="form">
+  <div class="form-group">
+    <label class="label">Type</label>
+    <div class="control">
+      <input v-model="accounttype.type" class="form-control" type="text" placeholder="Account Type">
+    </div>
+  </div>
+<div class="form-group">
+    <label class="label">Icon</label>
+    <div class="control">
+      <select v-model="accounttype.icon">
+        <option v-for="option in icons" v-bind:value="option" v-bind:key="option.id">
+    {{ option.iconName }}
+  </option>
+      </select>
+    </div>
+  </div>
+</section>
+<button
+  v-on:click="createAccountType"
+  class="btn btn-primary centerBlock">
+  Submit
+</button>
+    </form>
+</div>
+
+
+
+
 </div>
 
 
@@ -21,21 +50,31 @@ export default {
         icon: null
 
       },
-      icons: null,
+      icons: [],
       loaded: false,
       selectedIcon: null
     }
   },
-  beforeMount () {
-    this.icons = this.getIcons()
+  created () {
+    this.getIcons()
+  },
+  computed: {
+    doTheThing () {
+      return this.icons
+    }
   },
   methods: {
     createAccountType () {
-      console.log(accounttypeservice.createAccountType(this.accounttype))
+      accounttypeservice.createAccountType(this.accounttype)
     },
-    getIcons () {
-      return iconservice.getIcons()
+    async getIcons () {
+      this.icons = await iconservice.getIcons()
+      console.log(this.icons)
+    },
+    showOutput () {
+      console.log(this.accounttype)
     }
+
   }
 }
 </script>

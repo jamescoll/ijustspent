@@ -35,14 +35,13 @@ public class AccountTypeController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/accounttypes/icon/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/accounttypes", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> createAccountType(
-            @PathVariable String id,
             @RequestBody AccountType accountType
     ) {
 
-        iconRepository.findById(id).ifPresent(accountType::setIcon);
+        //iconRepository.findById().ifPresent(accountType::setIcon);
 
         return ok(accountTypeRepository.save(accountType));
 
@@ -69,13 +68,10 @@ public class AccountTypeController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/accounttypes/icon/{iconId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/accounttypes", method = RequestMethod.PUT)
     @ResponseBody
     public ResponseEntity<?> updateAccountType(
-            @PathVariable String iconId,
             @RequestBody AccountType accountType) {
-
-        iconRepository.findById(iconId).ifPresent(accountType::setIcon);
 
         return ok(accountTypeRepository.save(accountType));
 
