@@ -58,23 +58,13 @@ export default {
   created () {
     this.getIcons()
   },
-  computed: {
-    doTheThing () {
-      return this.icons
-    }
-  },
   methods: {
     createAccountType () {
       accounttypeservice.createAccountType(this.accounttype)
     },
     async getIcons () {
       this.icons = await iconservice.getIcons()
-      console.log(this.icons)
-    },
-    showOutput () {
-      console.log(this.accounttype)
     }
-
   }
 }
 </script>

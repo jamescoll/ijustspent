@@ -16,6 +16,7 @@ import Income from './components/forms/Income'
 import IncomeCategory from './components/forms/IncomeCategory'
 import Payee from './components/forms/Payee'
 import PaymentMethod from './components/forms/PaymentMethod'
+import Datepicker from 'vuejs-datepicker'
 
 require('bootstrap')
 
@@ -31,6 +32,7 @@ Vue.component('expensesubcategory', ExpenseSubcategory)
 Vue.component('icon', Icon)
 Vue.component('income', Income)
 Vue.component('incomecategory', IncomeCategory)
+Vue.component('datepicker', Datepicker)
 
 // Bootstrap Axios
 Axios.defaults.baseURL = window.AXIOS_BASE_URL ? window.AXIOS_BASE_URL : '/api/'
