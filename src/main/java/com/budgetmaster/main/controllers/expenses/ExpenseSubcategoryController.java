@@ -40,14 +40,9 @@ public class ExpenseSubcategoryController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/expensesubcategories/category/{categoryId}/icon/{iconId}", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/expensesubcategories/", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> createExpenseSubcategory(@PathVariable String categoryId,
-                                                      @PathVariable String iconId,
-                                                      @RequestBody ExpenseSubcategory expenseSubcategory) {
-
-        expenseCategoryRepository.findById(categoryId).ifPresent(expenseSubcategory::setExpenseCategory);
-        iconRepository.findById(iconId).ifPresent(expenseSubcategory::setIcon);
+    public ResponseEntity<?> createExpenseSubcategory(@RequestBody ExpenseSubcategory expenseSubcategory) {
 
         return ok(expenseSubcategoryRepository.save(expenseSubcategory));
     }
@@ -72,12 +67,8 @@ public class ExpenseSubcategoryController extends BaseController {
 
     @RequestMapping(value = "/expensesubcategories/category/{categoryId}/payee/{payeeId}", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateExpenseSubcategory(@PathVariable String categoryId,
-                                                      @PathVariable String iconId,
-                                                      @RequestBody ExpenseSubcategory expenseSubcategory) {
+    public ResponseEntity<?> updateExpenseSubcategory(@RequestBody ExpenseSubcategory expenseSubcategory) {
 
-        expenseCategoryRepository.findById(categoryId).ifPresent(expenseSubcategory::setExpenseCategory);
-        iconRepository.findById(iconId).ifPresent(expenseSubcategory::setIcon);
 
         return ok(expenseSubcategoryRepository.save(expenseSubcategory));
 

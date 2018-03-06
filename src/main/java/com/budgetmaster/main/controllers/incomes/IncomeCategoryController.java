@@ -35,14 +35,9 @@ public class IncomeCategoryController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/incomecategories/icon/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/incomecategories", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> createIncomeCategory(
-            @PathVariable String id,
-            @RequestBody IncomeCategory incomeCategory
-    ) {
-
-        iconRepository.findById(id).ifPresent(incomeCategory::setIcon);
+    public ResponseEntity<?> createIncomeCategory(@RequestBody IncomeCategory incomeCategory) {
 
         return ok(incomeCategoryRepository.save(incomeCategory));
 
@@ -53,8 +48,6 @@ public class IncomeCategoryController extends BaseController {
     public ResponseEntity<?> deleteIncomeCategory(@PathVariable String id) {
 
         incomeCategoryRepository.deleteById(id);
-
-        //todo fix all of these in delete as we don't want to be returning emptiness
         return ok();
 
     }
@@ -69,13 +62,9 @@ public class IncomeCategoryController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/incomecategories/icon/{iconId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/incomecategories", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateIncomeCategory(
-            @PathVariable String iconId,
-            @RequestBody IncomeCategory incomeCategory) {
-
-        iconRepository.findById(iconId).ifPresent(incomeCategory::setIcon);
+    public ResponseEntity<?> updateIncomeCategory(@RequestBody IncomeCategory incomeCategory) {
 
         return ok(incomeCategoryRepository.save(incomeCategory));
 

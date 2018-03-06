@@ -33,28 +33,15 @@ public class AccountController extends BaseController {
 
     @RequestMapping(value = "/accounts", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> createAccountWithoutType(
-            @PathVariable String accountType,
-            @RequestBody Account account) {
+    public ResponseEntity<?> createAccount(@RequestBody Account account) {
 
         return ok(accountRepository.save(account));
     }
 
-    @RequestMapping(value = "/accounts/accounttype/{typeId}", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/accounts", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> createAccountWithType(
-            @PathVariable String accountType,
-            @RequestBody Account account) {
+    public ResponseEntity<?> updateAccount(@RequestBody Account account) {
 
-        return ok(accountRepository.save(account));
-    }
-
-    @RequestMapping(value = "/accounts/accounttype/{typeId}", method = RequestMethod.PUT, consumes = "application/json")
-    @ResponseBody
-    public ResponseEntity<?> updateAccount(@PathVariable String typeId,
-                                           @RequestBody Account account) {
-
-        accountTypeRepository.findById(typeId).ifPresent(account::setAccountType);
         return ok(accountRepository.save(account));
     }
 

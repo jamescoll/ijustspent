@@ -40,11 +40,7 @@ public class AccountTypeController extends BaseController {
     public ResponseEntity<?> createAccountType(
             @RequestBody AccountType accountType
     ) {
-
-        //iconRepository.findById().ifPresent(accountType::setIcon);
-
         return ok(accountTypeRepository.save(accountType));
-
     }
 
     @RequestMapping(value = "/accounttypes/{id}", method = RequestMethod.DELETE)
@@ -52,8 +48,6 @@ public class AccountTypeController extends BaseController {
     public ResponseEntity<?> deleteAccountType(@PathVariable String id) {
 
         accountTypeRepository.deleteById(id);
-
-        //todo fix all of these in delete as we don't want to be returning emptiness
         return ok();
 
     }
@@ -63,7 +57,6 @@ public class AccountTypeController extends BaseController {
     public ResponseEntity<?> deleteAccountTypes() {
 
         accountTypeRepository.deleteAll();
-
         return ok();
 
     }

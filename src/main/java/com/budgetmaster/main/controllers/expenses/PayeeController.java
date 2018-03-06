@@ -31,13 +31,7 @@ public class PayeeController extends BaseController {
     @ResponseBody
     public ResponseEntity<?> getPayee(@PathVariable String id) {
 
-        Optional<Payee> payee = payeeRepository.findById(id);
-
-        if (payee.isPresent()) {
-            return ok(payee);
-        } else {
-            return notFound();
-        }
+        return ok(payeeRepository.findById(id));
 
     }
 
@@ -69,11 +63,6 @@ public class PayeeController extends BaseController {
 
         payeeRepository.deleteAll();
         return accepted();
-    }
-
-    //todo review this approach for validation
-    private boolean validatePayee(Payee payee) {
-        return (payee.getName() != null && payee.getAccountNumber() != null && payee.getPhoneNumber() != null);
     }
 
 }

@@ -13,14 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/v1")
 public class IncomeController extends BaseController {
 
-    /*
-     private IncomeCategory incomeCategory;
-    private Date date;
-    private BigDecimal amount;
-    private Account account;
-    private String note;
-     */
-
     @Autowired
     IncomeRepository incomeRepository;
 
@@ -54,32 +46,16 @@ public class IncomeController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/incomes/incomecategory/{categoryId}/account/{accountId}", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<?> createIncomeWithCategoryAndAccount(
-            @PathVariable String categoryId,
-            @PathVariable String accountId,
-            @RequestBody Income income) {
-
-        incomeCategoryRepository.findById(categoryId).ifPresent(income::setIncomeCategory);
-        accountRepository.findById(accountId).ifPresent(income::setAccount);
-
-        return ok(incomeRepository.save(income));
-
-    }
-
     @RequestMapping(value = "/incomes/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity<?> deleteIncome(@PathVariable String id) {
 
         incomeRepository.deleteById(id);
 
-        //todo fix all of these in delete as we don't want to be returning emptiness
         return ok();
 
     }
 
-    //todo we probably don't want to expose the nuclear option as a REST endpoint
     @RequestMapping(value = "/incomes", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity<?> deleteIncomes() {
@@ -92,13 +68,7 @@ public class IncomeController extends BaseController {
 
     @RequestMapping(value = "/incomes/incomecategory/{categoryId}/account/{accountId}", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateIncome(
-            @PathVariable String categoryId,
-            @PathVariable String accountId,
-            @RequestBody Income income) {
-
-        incomeCategoryRepository.findById(categoryId).ifPresent(income::setIncomeCategory);
-        accountRepository.findById(accountId).ifPresent(income::setAccount);
+    public ResponseEntity<?> updateIncome(@RequestBody Income income) {
 
         return ok(incomeRepository.save(income));
 

@@ -40,14 +40,9 @@ public class ExpenseController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/expenses/category/{categoryId}/payee/{payeeId}", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/expenses/", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> createExpense(@PathVariable String categoryId,
-                                           @PathVariable String payeeId,
-                                           @RequestBody Expense expense) {
-
-        expenseCategoryRepository.findById(categoryId).ifPresent(expense::setExpenseCategory);
-        payeeRepository.findById(payeeId).ifPresent(expense::setPayee);
+    public ResponseEntity<?> createExpense(@RequestBody Expense expense) {
 
         return ok(expenseRepository.save(expense));
     }
@@ -72,12 +67,7 @@ public class ExpenseController extends BaseController {
 
     @RequestMapping(value = "/expenses/category/{categoryId}/payee/{payeeId}", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateExpense(@PathVariable String categoryId,
-                                           @PathVariable String payeeId,
-                                           @RequestBody Expense expense) {
-
-        expenseCategoryRepository.findById(categoryId).ifPresent(expense::setExpenseCategory);
-        payeeRepository.findById(payeeId).ifPresent(expense::setPayee);
+    public ResponseEntity<?> updateExpense(@RequestBody Expense expense) {
 
         return ok(expenseRepository.save(expense));
 

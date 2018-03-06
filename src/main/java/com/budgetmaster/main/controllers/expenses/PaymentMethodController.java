@@ -39,14 +39,10 @@ public class PaymentMethodController extends BaseController {
         return ok(paymentMethodRepository.save(payee));
     }
 
-    @RequestMapping(value = "/paymentmethods/icon/{iconId}", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/paymentmethods", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> updatePaymentMethod(@PathVariable String iconId,
-                                                 @RequestBody PaymentMethod payee) {
-        //todo i don't think these will be necessary for update as they will already be on the document
-        //test 1.) updating with subfields on the document as json in the request and 2.) with a changed field on the subdocument
-        //if both work ootb then this call isn't necessary - it still will be on create tho
-        iconRepository.findById(iconId).ifPresent(payee::setIcon);
+    public ResponseEntity<?> updatePaymentMethod(@RequestBody PaymentMethod payee) {
+
         return ok(paymentMethodRepository.save(payee));
     }
 

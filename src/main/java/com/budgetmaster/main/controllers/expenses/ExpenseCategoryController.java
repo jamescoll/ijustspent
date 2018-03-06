@@ -37,12 +37,9 @@ public class ExpenseCategoryController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/expensecategories/icon/{iconId}", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/expensecategories", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public ResponseEntity<?> createExpenseCategory(@PathVariable String iconId,
-                                                   @RequestBody ExpenseCategory expenseCategory) {
-
-        iconRepository.findById(iconId).ifPresent(expenseCategory::setIcon);
+    public ResponseEntity<?> createExpenseCategory(@RequestBody ExpenseCategory expenseCategory) {
 
         return ok(expenseCategoryRepository.save(expenseCategory));
     }
@@ -65,12 +62,9 @@ public class ExpenseCategoryController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/expensecategories/icon/{iconId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/expensecategories", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateExpense(@PathVariable String iconId,
-                                           @RequestBody ExpenseCategory expenseCategory) {
-
-        iconRepository.findById(iconId).ifPresent(expenseCategory::setIcon);
+    public ResponseEntity<?> updateExpense(@RequestBody ExpenseCategory expenseCategory) {
 
         return ok(expenseCategoryRepository.save(expenseCategory));
 
