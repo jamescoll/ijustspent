@@ -76,6 +76,9 @@ I can view metadata about how communities of people are spending their money in 
 As a user I can send any transaction from any device to Budgetmaster and see the effect of that transaction and how it contributes to my plan. I can set
  targets, view savings timelines and other associated goals. As a data user, I can view metadata about how communities of people are spending their money in various data slices.
 
+## Version 3.0.0 Target
+As a user I can make a budget and use the application to assist me in making day-to-day financial decisions. I can also easily understand what I am spending my money on and how that assists or diverges from my goals. I can do this easily and without having any deep technical understanding.
+
 ## TODOS for version 1.0.0 Target
 Learn about Google, Facebook auth
 Learn about Spring Security auth combined with js frontend
