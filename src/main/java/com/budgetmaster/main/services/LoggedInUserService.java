@@ -10,13 +10,12 @@ public class LoggedInUserService {
     @Autowired
     UserService userService;
 
+    //todo verify if this is necessary as it's here to avoid an NPE
     {
         loggedInUser = new User();
     }
 
     private User loggedInUser;
-
-
 
     public void logOut(){
         loggedInUser = new User();

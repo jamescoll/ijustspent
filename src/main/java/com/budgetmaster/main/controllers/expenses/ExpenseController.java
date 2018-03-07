@@ -5,6 +5,7 @@ import com.budgetmaster.main.models.expenses.Expense;
 import com.budgetmaster.main.repositories.expenses.ExpenseCategoryRepository;
 import com.budgetmaster.main.repositories.expenses.ExpenseRepository;
 import com.budgetmaster.main.repositories.expenses.PayeeRepository;
+import com.budgetmaster.main.services.LoggedInUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,9 @@ public class ExpenseController extends BaseController {
 
     @Autowired
     ExpenseCategoryRepository expenseCategoryRepository;
+
+    @Autowired
+    LoggedInUserService loggedInUserService;
 
     @Autowired
     PayeeRepository payeeRepository;
@@ -43,7 +47,8 @@ public class ExpenseController extends BaseController {
     @RequestMapping(value = "/expenses/", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> createExpense(@RequestBody Expense expense) {
-
+        expense.setUser(loggedInUserService.getLoggedInUser());
+        expense.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(expenseRepository.save(expense));
     }
 
@@ -65,10 +70,10 @@ public class ExpenseController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/expenses/category/{categoryId}/payee/{payeeId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/expenses", method = RequestMethod.PUT)
     @ResponseBody
     public ResponseEntity<?> updateExpense(@RequestBody Expense expense) {
-
+        expense.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(expenseRepository.save(expense));
 
     }

@@ -65,7 +65,7 @@ public class ExpenseSubcategoryController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/expensesubcategories/category/{categoryId}/payee/{payeeId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/expensesubcategories", method = RequestMethod.PUT)
     @ResponseBody
     public ResponseEntity<?> updateExpenseSubcategory(@RequestBody ExpenseSubcategory expenseSubcategory) {
 

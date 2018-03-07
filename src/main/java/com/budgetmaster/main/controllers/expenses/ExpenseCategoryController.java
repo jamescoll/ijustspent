@@ -64,7 +64,7 @@ public class ExpenseCategoryController extends BaseController {
 
     @RequestMapping(value = "/expensecategories", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseEntity<?> updateExpense(@RequestBody ExpenseCategory expenseCategory) {
+    public ResponseEntity<?> updateExpenseCategory(@RequestBody ExpenseCategory expenseCategory) {
 
         return ok(expenseCategoryRepository.save(expenseCategory));
 

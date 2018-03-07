@@ -4,6 +4,7 @@ import com.budgetmaster.main.controllers.BaseController;
 import com.budgetmaster.main.models.accounts.Account;
 import com.budgetmaster.main.repositories.accounts.AccountRepository;
 import com.budgetmaster.main.repositories.accounts.AccountTypeRepository;
+import com.budgetmaster.main.services.LoggedInUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,9 @@ public class AccountController extends BaseController {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    LoggedInUserService loggedInUserService;
 
     @RequestMapping(value = "/accounts", method = RequestMethod.GET)
     @ResponseBody
@@ -34,21 +38,22 @@ public class AccountController extends BaseController {
     @RequestMapping(value = "/accounts", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> createAccount(@RequestBody Account account) {
-
+        account.setUser(loggedInUserService.getLoggedInUser());
+        account.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(accountRepository.save(account));
     }
 
     @RequestMapping(value = "/accounts", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> updateAccount(@RequestBody Account account) {
-
+        account.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(accountRepository.save(account));
     }
 
     @RequestMapping(value = "/accounts/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity<?> deleteAccount(@PathVariable String id) {
-
+        //todo add logic preventing a user from deleting an account which they did not create
         accountRepository.deleteById(id);
         return ok();
     }

@@ -5,6 +5,7 @@ import com.budgetmaster.main.models.incomes.Income;
 import com.budgetmaster.main.repositories.accounts.AccountRepository;
 import com.budgetmaster.main.repositories.incomes.IncomeCategoryRepository;
 import com.budgetmaster.main.repositories.incomes.IncomeRepository;
+import com.budgetmaster.main.services.LoggedInUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ public class IncomeController extends BaseController {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    LoggedInUserService loggedInUserService;
 
     @RequestMapping(value = "/incomes", method = RequestMethod.GET)
     @ResponseBody
@@ -41,7 +45,8 @@ public class IncomeController extends BaseController {
     @RequestMapping(value = "/incomes", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> createIncome(@RequestBody Income income) {
-
+        income.setUser(loggedInUserService.getLoggedInUser());
+        income.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(incomeRepository.save(income));
 
     }
@@ -66,10 +71,11 @@ public class IncomeController extends BaseController {
 
     }
 
-    @RequestMapping(value = "/incomes/incomecategory/{categoryId}/account/{accountId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/incomes", method = RequestMethod.PUT)
     @ResponseBody
     public ResponseEntity<?> updateIncome(@RequestBody Income income) {
 
+        income.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(incomeRepository.save(income));
 
     }

@@ -39,13 +39,14 @@ public class PayeeController extends BaseController {
     @ResponseBody
     public ResponseEntity<?> createPayee(@RequestBody Payee payee) {
         payee.setUser(loggedInUserService.getLoggedInUser());
+        payee.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return created(payeeRepository.save(payee));
     }
 
     @RequestMapping(value = "/payees", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> updatePayee(@RequestBody Payee payee) {
-
+        payee.addToUpdateByUsers(loggedInUserService.getLoggedInUser());
         return ok(payeeRepository.save(payee));
     }
 
