@@ -6,6 +6,8 @@
 ## Requirements
 MongoDB
 JDK 1.8
+Maven
+Node
 
 ## Usage
 
@@ -54,6 +56,9 @@ $ npm run test
 ## Version 0.1.0 Goals
 As a user I can add all my expense, account and other information - view montly and weekly rollups in a chart
 - and view associated icons for each of the categories. I am doing this in a basic environment using vue components
+
+## Notes on Version 0.1.0 Goals
+Version one should be a 'type of' homebudget-lite but resting on a different database type https://itunes.apple.com/us/app/homebudget-lite-w-sync/id307620907?mt=8 - there is nothing particularly original in this school of applications but the useful functionality will come later. Really, it should be possible to create a much better user experience that homebudget lite which looks like a mobile app hacked into a UI..but the techincal challenge of re-creating it is useful in terms of learning what is good and what sucks - and how to create such an app.
 
 ## Version 0.2.0 Goals
 As a user I can authenticate with Google, Facebook as well as with local, I am redirected to login if I am unauthenticated,
