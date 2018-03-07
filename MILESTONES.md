@@ -109,4 +109,8 @@ Added panels for entering data into all of the models. There is now a rough and 
 Got service working and returning for accounttype. Now it is a question of mapping that to each other account and potentially installing vuex for monitoring app state
 
 ## Milestone 0.0.24
-Got rudimentary account page working with checkbox and datepicker - nothing beautiful but ...it's functional.
+Got rudimentary account page working with checkbox and datepicker - nothing beautiful but ...it's functiona
+
+## Milestone 0.0.25
+Fixing endpoints in controllers so to be standardized. Also adding functionality so user edits can be tracked in documents
+
