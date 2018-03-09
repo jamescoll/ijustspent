@@ -8,15 +8,9 @@ import Login from '@/components/login/Login'
 import SignUp from '@/components/login/SignUp'
 import About from '@/components/homecards/About'
 import Account from '@/components/forms/Account'
-import AccountType from '@/components/forms/AccountType'
 import Expense from '@/components/forms/Expense'
-import ExpenseCategory from '@/components/forms/ExpenseCategory'
-import ExpenseSubcategory from '@/components/forms/ExpenseSubcategory'
-import Icon from '@/components/forms/Icon'
 import Income from '@/components/forms/Income'
-import IncomeCategory from '@/components/forms/IncomeCategory'
 import Payee from '@/components/forms/Payee'
-import PaymentMethod from '@/components/forms/PaymentMethod'
 
 Vue.use(Router)
 
@@ -65,52 +59,26 @@ const router = new Router({
     {
       path: '/account',
       name: 'account',
-      component: Account
-    },
-    {
-      path: '/accounttype',
-      name: 'accounttype',
-      component: AccountType
+      component: Account,
+      meta: {requiresAuth: true}
     },
     {
       path: '/expense',
       name: 'expense',
-      component: Expense
-    },
-    {
-      path: '/expensecategory',
-      name: 'expensecategory',
-      component: ExpenseCategory
-    },
-    {
-      path: '/ExpenseSubcategory',
-      name: 'expensesubcategory',
-      component: ExpenseSubcategory
-    },
-    {
-      path: '/icon',
-      name: 'icon',
-      component: Icon
+      component: Expense,
+      meta: {requiresAuth: true}
     },
     {
       path: '/income',
       name: 'income',
-      component: Income
-    },
-    {
-      path: '/incomecategory',
-      name: 'incomecategory',
-      component: IncomeCategory
+      component: Income,
+      meta: {requiresAuth: true}
     },
     {
       path: '/payee',
       name: 'payee',
-      component: Payee
-    },
-    {
-      path: '/paymentmethod',
-      name: 'paymentmethod',
-      component: PaymentMethod
+      component: Payee,
+      meta: {requiresAuth: true}
     }
   ]
 })

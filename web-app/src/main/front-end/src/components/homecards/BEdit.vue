@@ -26,12 +26,6 @@
                   Add Account
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addAccountType')">
-                  <span data-feather="users"></span>
-                  Add Account Type
-                </a>
-              </li>
               </div>
               <li class="nav-item">
                 <a class="nav-link" v-bind:class="{ active: showExpenses }" v-on:click="showExpenses=!showExpenses">
@@ -40,34 +34,18 @@
                 </a>
               </li>
               <div v-if="showExpenses">
-              <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addExpenseCategory')">
-                  <span data-feather="shopping-cart"></span>
-                  Add Expense Category
-                </a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link text-muted" v-on:click="setCenterPane('addExpense')">
                   <span data-feather="users"></span>
                   Add Expense
                 </a>
               </li>
-               <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addExpenseSubcategory')">
-                  <span data-feather="shopping-cart"></span>
-                  Add Expense Subcategory
-                </a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link text-muted" v-on:click="setCenterPane('addPayee')">
                   <span data-feather="users"></span>
                   Add Payee
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addPaymentMethod')">
-                  <span data-feather="shopping-cart"></span>
-                  Add Payment Method
                 </a>
               </li>
               </div>
@@ -79,29 +57,9 @@
               </li>
               <div v-if="showIncomes">
               <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addIncomeCategory')">
-                  <span data-feather="shopping-cart"></span>
-                  Add Income Category
-                </a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link text-muted" v-on:click="setCenterPane('addIncome')">
                   <span data-feather="users"></span>
                   Add Income
-                </a>
-              </li>
-              </div>
-                <li class="nav-item">
-                <a class="nav-link" v-bind:class="{ active: showResources }" v-on:click="showResources=!showResources">
-                  <span data-feather="file"></span>
-                  Resources
-                </a>
-              </li>
-              <div v-if="showResources">
-              <li class="nav-item">
-                <a class="nav-link text-muted" v-on:click="setCenterPane('addIcon')">
-                  <span data-feather="shopping-cart"></span>
-                  Add Icon
                 </a>
               </li>
               </div>
@@ -111,15 +69,9 @@
    </div>
    <div class="col-sm-4">
      <div v-if="selectedView=='addAccount'"><account></account></div>
-    <div v-if="selectedView=='addAccountType'"><accounttype></accounttype></div>
-      <div v-if="selectedView=='addExpenseCategory'"><expensecategory></expensecategory></div>
     <div v-if="selectedView=='addExpense'"><expense></expense></div>
-      <div v-if="selectedView=='addExpenseSubcategory'"><expensesubcategory></expensesubcategory></div>
     <div v-if="selectedView=='addPayee'"><payee></payee></div>
-      <div v-if="selectedView=='addPaymentMethod'"><paymentmethod></paymentmethod></div>
     <div v-if="selectedView=='addIncome'"><income></income></div>
-      <div v-if="selectedView=='addIncomeCategory'"><incomecategory></incomecategory></div>
-    <div v-if="selectedView=='addIcon'"><icon></icon></div>
    </div>
     <div class="col-sm-4"></div>
     </div>
