@@ -1,0 +1,180 @@
+{ 
+    "_id" : ObjectId("5aa30cd98de60403c4240887"), 
+    "categoryName" : "Home", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:17.142+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:17.142+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30ce48de60403c4240888"), 
+    "categoryName" : "Bills", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:28.395+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:28.395+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30ce98de60403c4240889"), 
+    "categoryName" : "Food", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:33.153+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:33.153+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30cf08de60403c424088a"), 
+    "categoryName" : "Entertainment", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:40.041+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:40.041+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30cf68de60403c424088b"), 
+    "categoryName" : "Auto", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:46.083+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:46.083+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30cfb8de60403c424088c"), 
+    "categoryName" : "Insurance", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:51.431+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:51.431+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30d008de60403c424088d"), 
+    "categoryName" : "Medical", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:38:56.695+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:38:56.696+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30d068de60403c424088e"), 
+    "categoryName" : "Misc", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:39:02.117+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:39:02.117+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}
+{ 
+    "_id" : ObjectId("5aa30d0b8de60403c424088f"), 
+    "categoryName" : "Shopping", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T22:39:07.342+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T22:39:07.342+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.expenses.ExpenseCategory", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.expenses.ExpenseCategory"
+}

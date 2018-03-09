@@ -41,7 +41,14 @@
                   Add Expense
                 </a>
               </li>
-
+              </div>
+               <li class="nav-item">
+                              <a class="nav-link" v-bind:class="{ active: showPayees }" v-on:click="showPayees=!showPayees">
+                                <span data-feather="file"></span>
+                                Payees
+                              </a>
+                            </li>
+              <div v-if="showPayees">
               <li class="nav-item">
                 <a class="nav-link text-muted" v-on:click="setCenterPane('addPayee')">
                   <span data-feather="users"></span>
@@ -87,7 +94,7 @@ export default {
       showAccounts: false,
       showExpenses: false,
       showIncomes: false,
-      showResources: false,
+      showPayees: false,
       selectedView: ''
     }
   },

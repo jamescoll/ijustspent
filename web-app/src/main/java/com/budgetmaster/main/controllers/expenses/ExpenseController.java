@@ -44,7 +44,7 @@ public class ExpenseController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/expenses/", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/expenses", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> createExpense(@RequestBody Expense expense) {
         expense.setUser(loggedInUserService.getLoggedInUser());

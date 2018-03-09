@@ -116,3 +116,6 @@ Fixing endpoints in controllers so to be standardized. Also adding functionality
 
 ## Milestone 0.0.26
 Changing directory structure to introduce mobile and web-app folders. Adding wireframe for mobile. Changing name to ijustspent
+
+## Milestone 0.0.27
+Added expense form, got sample data for expense categories and account types. 

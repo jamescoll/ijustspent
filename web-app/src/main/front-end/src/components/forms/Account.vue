@@ -10,7 +10,7 @@
     </div>
   </div>
  <div class="form-group">
-    <label class="label">Icon</label>
+    <label class="label">Account Type</label>
     <div class="control">
       <select v-model="account.accountType">
         <option v-for="option in accountTypes" v-bind:value="option" v-bind:key="option.id">

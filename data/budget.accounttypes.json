@@ -1,0 +1,100 @@
+{ 
+    "_id" : ObjectId("5aa314568de60403c42408a3"), 
+    "type" : "Debit", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T23:10:14.325+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T23:10:14.325+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.accounts.AccountType", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.accounts.AccountType"
+}
+{ 
+    "_id" : ObjectId("5aa3145a8de60403c42408a4"), 
+    "type" : "Credit", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T23:10:18.276+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T23:10:18.276+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.accounts.AccountType", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.accounts.AccountType"
+}
+{ 
+    "_id" : ObjectId("5aa3145f8de60403c42408a5"), 
+    "type" : "Checking", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T23:10:23.173+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T23:10:23.173+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.accounts.AccountType", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.accounts.AccountType"
+}
+{ 
+    "_id" : ObjectId("5aa314638de60403c42408a6"), 
+    "type" : "Savings", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T23:10:27.366+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T23:10:27.365+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.accounts.AccountType", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.accounts.AccountType"
+}
+{ 
+    "_id" : ObjectId("5aa314668de60403c42408a7"), 
+    "type" : "Cash", 
+    "icon" : {
+        "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+        "createStamp" : ISODate("2018-03-09T23:10:30.896+0000"), 
+        "version" : "1", 
+        "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+        "updateByUsers" : {
+
+        }
+    }, 
+    "createStamp" : ISODate("2018-03-09T23:10:30.896+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.accounts.AccountType", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.accounts.AccountType"
+}

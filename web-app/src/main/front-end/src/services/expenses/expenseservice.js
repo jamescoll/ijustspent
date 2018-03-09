@@ -4,7 +4,7 @@ import Promise from 'bluebird'
 export default {
   createExpense (expense) {
     return new Promise((resolve, reject) => {
-      Vue.$http.post('v1/expenses', expense).then(({data}) => {
+      Vue.$http.post('v1/expenses/', expense).then(({data}) => {
         console.log(data)
         resolve(data)
       }).catch((error) => {
