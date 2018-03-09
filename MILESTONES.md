@@ -114,3 +114,5 @@ Got rudimentary account page working with checkbox and datepicker - nothing beau
 ## Milestone 0.0.25
 Fixing endpoints in controllers so to be standardized. Also adding functionality so user edits can be tracked in documents
 
+## Milestone 0.0.26
+Changing directory structure to introduce mobile and web-app folders. Adding wireframe for mobile. Changing name to ijustspent

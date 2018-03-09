@@ -1,6 +1,6 @@
-# Budgetmaster
+# ijustspent
 
-> Home budget application using Vue.js 2.x, Spring Boot 2.x, Webpack, 3.x and ES2015/ES6, with MongoDB
+> Spending tracking application using Vue.js 2.x, Spring Boot 2.x, Webpack, 3.x and ES2015/ES6, with MongoDB
 
 
 ## Requirements
