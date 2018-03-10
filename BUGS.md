@@ -4,4 +4,8 @@ Requests seem to be coming in twice from the back to the front-end. This may hav
 
 ## Unit tests for filtering failing
 
-Unit tests for corsfiltering are failing or incomplete. Also need to add a section in the payee tests for the user modify hash-map 
+Unit tests for corsfiltering are failing or incomplete. Also need to add a section in the payee tests for the user modify hash-map
+
+## Endpoints in services/controllers not uniform
+
+Some endpoints have trailing slashes (/) some don't..should be an easy fix but worth looking at soon. 

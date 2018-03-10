@@ -11,6 +11,7 @@ import Account from '@/components/forms/Account'
 import Expense from '@/components/forms/Expense'
 import Income from '@/components/forms/Income'
 import Payee from '@/components/forms/Payee'
+import ExpenseSubcategory from '@/components/forms/ExpenseSubcategory'
 
 Vue.use(Router)
 
@@ -78,6 +79,12 @@ const router = new Router({
       path: '/payee',
       name: 'payee',
       component: Payee,
+      meta: {requiresAuth: true}
+    },
+    {
+      path: '/subcat',
+      name: 'subcat',
+      component: ExpenseSubcategory,
       meta: {requiresAuth: true}
     }
   ]

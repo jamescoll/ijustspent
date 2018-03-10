@@ -118,4 +118,7 @@ Fixing endpoints in controllers so to be standardized. Also adding functionality
 Changing directory structure to introduce mobile and web-app folders. Adding wireframe for mobile. Changing name to ijustspent
 
 ## Milestone 0.0.27
-Added expense form, got sample data for expense categories and account types. 
+Added expense form, got sample data for expense categories and account types.
+
+## Milestone 0.0.28
+Added temporary vue form to enter subcategories. Added data files for account types, expensecategories, etc.. in data folder. Need to be tested but should enable test and category autopopulation 

@@ -1,0 +1,15 @@
+{ 
+    "_id" : ObjectId("5aa4515e9811e209d87f5f67"), 
+    "authorities" : [
+        "ROLE_USER"
+    ], 
+    "username" : "testuser", 
+    "password" : "$2a$12$Tp8kbrV755s2H8g5Ew36te5qEXeQe6YJK3PdQt8CjYWetvce3ETr2", 
+    "accountNonExpired" : false, 
+    "accountNonLocked" : false, 
+    "credentialsNonExpired" : false, 
+    "isEnabled" : true, 
+    "createdAt" : "2018-03-10T21:42:53.934", 
+    "updatedAt" : "2018-03-10T21:42:53.935", 
+    "_class" : "com.budgetmaster.main.models.security.User"
+}

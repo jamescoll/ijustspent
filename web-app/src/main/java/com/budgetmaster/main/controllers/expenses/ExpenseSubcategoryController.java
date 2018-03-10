@@ -40,7 +40,7 @@ public class ExpenseSubcategoryController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/expensesubcategories/", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/expensesubcategories", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseEntity<?> createExpenseSubcategory(@RequestBody ExpenseSubcategory expenseSubcategory) {
 

@@ -4,7 +4,7 @@ import Promise from 'bluebird'
 export default {
   createExpenseSubCategory (expensesubcategory) {
     return new Promise((resolve, reject) => {
-      Vue.$http.post('v1/expensesubcategories', expensesubcategory).then(({data}) => {
+      Vue.$http.post('v1/expensesubcategories/', expensesubcategory).then(({data}) => {
         console.log(data)
         resolve(data)
       }).catch((error) => {
@@ -24,7 +24,7 @@ export default {
   },
   getExpenseSubCategory (id) {
     return new Promise((resolve, reject) => {
-      Vue.$http.get('v1/expensesubcategories/' + id).then(({data}) => {
+      Vue.$http.get('v1/expensesubcategories' + id).then(({data}) => {
         console.log(data)
         resolve(data)
       }).catch((error) => {
@@ -44,7 +44,7 @@ export default {
   },
   deleteExpenseSubCategory (id) {
     return new Promise((resolve, reject) => {
-      Vue.$http.delete('v1/expensesubcategories/' + id).then(({data}) => {
+      Vue.$http.delete('v1/expensesubcategories' + id).then(({data}) => {
         console.log(data)
         resolve(data)
       }).catch((error) => {

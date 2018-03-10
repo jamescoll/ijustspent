@@ -1,0 +1,12 @@
+{ 
+    "_id" : ObjectId("5aa30ad78de60403c424087d"), 
+    "iconName" : "placeholder", 
+    "iconCategory" : "placeholder category", 
+    "createStamp" : ISODate("2018-03-09T22:29:43.656+0000"), 
+    "version" : "1", 
+    "documentType" : "com.budgetmaster.main.models.resources.Icon", 
+    "updateByUsers" : {
+
+    }, 
+    "_class" : "com.budgetmaster.main.models.resources.Icon"
+}
