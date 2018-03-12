@@ -8,4 +8,8 @@ Unit tests for corsfiltering are failing or incomplete. Also need to add a secti
 
 ## Endpoints in services/controllers not uniform
 
-Some endpoints have trailing slashes (/) some don't..should be an easy fix but worth looking at soon. 
+Some endpoints have trailing slashes (/) some don't..should be an easy fix but worth looking at soon.
+
+## Swagger UI endpoint not visible
+
+Can't work out where the swagger endpoint is - the separate front and back end amay be causal factors here - but i dont know where that guy is 
