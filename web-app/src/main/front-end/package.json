@@ -1,7 +1,7 @@
 {
-  "name": "budgetmaster",
+  "name": "ijustspent",
   "version": "0.0.29",
-  "description": "Budgeting Application",
+  "description": "Spending tracking and budgeting application",
   "author": "James Coll (james.evin.coll@gmail.com)",
   "private": true,
   "repository": "",

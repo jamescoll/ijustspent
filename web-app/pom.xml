@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.budgetmaster</groupId>
-  <artifactId>budget-master</artifactId>
+  <groupId>com.ijustspent</groupId>
+  <artifactId>ijustspent</artifactId>
   <version>0.0.29</version>
   <packaging>jar</packaging>
 
-  <name>Budgetmaster</name>
-  <description>A budgetmaker project with Vue and Spring</description>
+  <name>ijustspent</name>
+  <description>A spend tracking/budget project with Vue and Spring</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
