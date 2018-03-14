@@ -1,9 +1,9 @@
 package com.ijustspent.main.controllers.accounts;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.accounts.AccountType;
-import com.budgetmaster.main.repositories.accounts.AccountTypeRepository;
-import com.budgetmaster.main.repositories.resources.IconRepository;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.accounts.AccountType;
+import com.ijustspent.main.repositories.accounts.AccountTypeRepository;
+import com.ijustspent.main.repositories.resources.IconRepository;
 import com.ijustspent.main.models.accounts.AccountType;
 import com.ijustspent.main.repositories.accounts.AccountTypeRepository;
 import com.ijustspent.main.repositories.resources.IconRepository;

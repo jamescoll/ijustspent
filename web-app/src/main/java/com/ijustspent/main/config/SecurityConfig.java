@@ -1,7 +1,7 @@
 package com.ijustspent.main.config;
 
-import com.budgetmaster.main.security.filter.AuthenticationTokenFilter;
-import com.budgetmaster.main.security.service.TokenAuthenticationService;
+import com.ijustspent.main.security.filter.AuthenticationTokenFilter;
+import com.ijustspent.main.security.service.TokenAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

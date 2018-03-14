@@ -1,19 +1,14 @@
 package com.ijustspent.main.controllers.expenses;
 
-import com.budgetmaster.main.Application;
-import com.budgetmaster.main.dto.LoginDTO;
-import com.budgetmaster.main.models.expenses.Payee;
-import com.budgetmaster.main.models.security.Authority;
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.repositories.expenses.PayeeRepository;
-import com.budgetmaster.main.repositories.security.UserRepository;
-import com.budgetmaster.main.services.LoggedInUserService;
-import com.budgetmaster.main.services.UserService;
 import com.ijustspent.main.Application;
 import com.ijustspent.main.dto.LoginDTO;
 import com.ijustspent.main.models.expenses.Payee;
+import com.ijustspent.main.models.security.Authority;
+import com.ijustspent.main.models.security.User;
 import com.ijustspent.main.repositories.expenses.PayeeRepository;
 import com.ijustspent.main.repositories.security.UserRepository;
+import com.ijustspent.main.services.LoggedInUserService;
+import com.ijustspent.main.services.UserService;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;

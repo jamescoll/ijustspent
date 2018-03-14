@@ -1,6 +1,6 @@
 package com.ijustspent.main.services;
 
-import com.budgetmaster.main.repositories.expenses.ExpenseRepository;
+import com.ijustspent.main.repositories.expenses.ExpenseRepository;
 import com.ijustspent.main.repositories.expenses.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

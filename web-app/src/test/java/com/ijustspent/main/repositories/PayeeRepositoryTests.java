@@ -1,8 +1,5 @@
 package com.ijustspent.main.repositories;
 
-import com.budgetmaster.main.Application;
-import com.budgetmaster.main.models.expenses.Payee;
-import com.budgetmaster.main.repositories.expenses.PayeeRepository;
 import com.ijustspent.main.Application;
 import com.ijustspent.main.models.expenses.Payee;
 import com.ijustspent.main.repositories.expenses.PayeeRepository;

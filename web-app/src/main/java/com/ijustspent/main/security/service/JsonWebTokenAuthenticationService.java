@@ -1,9 +1,9 @@
 package com.ijustspent.main.security.service;
 
-import com.budgetmaster.main.exceptions.model.UserNotFoundException;
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.models.security.UserAuthentication;
-import com.budgetmaster.main.security.constants.SecurityConstants;
+import com.ijustspent.main.exceptions.model.UserNotFoundException;
+import com.ijustspent.main.models.security.User;
+import com.ijustspent.main.models.security.UserAuthentication;
+import com.ijustspent.main.security.constants.SecurityConstants;
 import com.ijustspent.main.exceptions.model.UserNotFoundException;
 import com.ijustspent.main.security.constants.SecurityConstants;
 import io.jsonwebtoken.*;

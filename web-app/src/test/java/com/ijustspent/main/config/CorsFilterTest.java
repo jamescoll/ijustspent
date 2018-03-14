@@ -1,7 +1,6 @@
 package com.ijustspent.main.config;
 
 
-import com.budgetmaster.main.Application;
 import com.ijustspent.main.Application;
 import junit.framework.TestCase;
 import org.junit.runner.RunWith;

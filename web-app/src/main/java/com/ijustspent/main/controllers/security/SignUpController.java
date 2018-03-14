@@ -1,8 +1,8 @@
 package com.ijustspent.main.controllers.security;
 
-import com.budgetmaster.main.converters.ConverterFacade;
-import com.budgetmaster.main.dto.UserDTO;
-import com.budgetmaster.main.services.UserService;
+import com.ijustspent.main.converters.ConverterFacade;
+import com.ijustspent.main.dto.UserDTO;
+import com.ijustspent.main.services.UserService;
 import com.ijustspent.main.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

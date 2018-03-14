@@ -1,9 +1,9 @@
 package com.ijustspent.main.controllers.expenses;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.expenses.ExpenseCategory;
-import com.budgetmaster.main.repositories.expenses.ExpenseCategoryRepository;
-import com.budgetmaster.main.repositories.resources.IconRepository;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.expenses.ExpenseCategory;
+import com.ijustspent.main.repositories.expenses.ExpenseCategoryRepository;
+import com.ijustspent.main.repositories.resources.IconRepository;
 import com.ijustspent.main.models.expenses.ExpenseCategory;
 import com.ijustspent.main.repositories.expenses.ExpenseCategoryRepository;
 import com.ijustspent.main.repositories.resources.IconRepository;

@@ -1,8 +1,8 @@
 package com.ijustspent.main.services;
 
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.repositories.security.UserRepository;
-import com.budgetmaster.main.security.helpers.PasswordHelper;
+import com.ijustspent.main.models.security.User;
+import com.ijustspent.main.repositories.security.UserRepository;
+import com.ijustspent.main.security.helpers.PasswordHelper;
 import com.ijustspent.main.repositories.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

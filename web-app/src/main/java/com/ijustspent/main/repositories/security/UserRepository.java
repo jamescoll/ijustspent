@@ -1,6 +1,6 @@
 package com.ijustspent.main.repositories.security;
 
-import com.budgetmaster.main.models.security.User;
+import com.ijustspent.main.models.security.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

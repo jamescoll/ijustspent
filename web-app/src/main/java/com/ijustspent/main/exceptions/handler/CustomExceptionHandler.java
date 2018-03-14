@@ -1,7 +1,7 @@
 package com.ijustspent.main.exceptions.handler;
 
-import com.budgetmaster.main.exceptions.model.ServiceException;
-import com.budgetmaster.main.exceptions.model.UserNotFoundException;
+import com.ijustspent.main.exceptions.model.ServiceException;
+import com.ijustspent.main.exceptions.model.UserNotFoundException;
 import com.mongodb.MongoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

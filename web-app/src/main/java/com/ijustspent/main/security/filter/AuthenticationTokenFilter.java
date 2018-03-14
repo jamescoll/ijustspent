@@ -1,6 +1,6 @@
 package com.ijustspent.main.security.filter;
 
-import com.budgetmaster.main.security.service.TokenAuthenticationService;
+import com.ijustspent.main.security.service.TokenAuthenticationService;
 import com.ijustspent.main.security.service.TokenAuthenticationService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,12 +1,10 @@
 package com.ijustspent.main.controllers.security;
 
-import com.budgetmaster.main.dto.LoginDTO;
-import com.budgetmaster.main.dto.TokenDTO;
-import com.budgetmaster.main.security.service.TokenService;
-import com.budgetmaster.main.services.LoggedInUserService;
-import com.budgetmaster.main.services.UserService;
 import com.ijustspent.main.dto.LoginDTO;
 import com.ijustspent.main.dto.TokenDTO;
+import com.ijustspent.main.security.service.TokenService;
+import com.ijustspent.main.services.LoggedInUserService;
+import com.ijustspent.main.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

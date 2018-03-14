@@ -1,6 +1,6 @@
 package com.ijustspent.main.services;
 
-import com.budgetmaster.main.models.security.User;
+import com.ijustspent.main.models.security.User;
 
 import java.util.List;
 

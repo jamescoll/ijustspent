@@ -1,8 +1,8 @@
 package com.ijustspent.main.security.service;
 
-import com.budgetmaster.main.exceptions.model.ServiceException;
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.security.helpers.PasswordHelper;
+import com.ijustspent.main.exceptions.model.ServiceException;
+import com.ijustspent.main.models.security.User;
+import com.ijustspent.main.security.helpers.PasswordHelper;
 import com.ijustspent.main.exceptions.model.ServiceException;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;

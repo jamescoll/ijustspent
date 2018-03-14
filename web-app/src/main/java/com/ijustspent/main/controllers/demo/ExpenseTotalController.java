@@ -1,8 +1,7 @@
 package com.ijustspent.main.controllers.demo;
 
-import com.budgetmaster.main.models.demo.ExpenseTotal;
-import com.google.common.collect.Maps;
 import com.ijustspent.main.models.demo.ExpenseTotal;
+import com.google.common.collect.Maps;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

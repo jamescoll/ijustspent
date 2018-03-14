@@ -1,18 +1,14 @@
 package com.ijustspent.main.controllers.security;
 
-import com.budgetmaster.main.Application;
-import com.budgetmaster.main.dto.LoginDTO;
-import com.budgetmaster.main.dto.UserDTO;
-import com.budgetmaster.main.models.security.Authority;
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.repositories.security.UserRepository;
-import com.budgetmaster.main.security.helpers.PasswordHelper;
-import com.budgetmaster.main.security.service.TokenService;
-import com.budgetmaster.main.services.UserService;
+
 import com.ijustspent.main.Application;
 import com.ijustspent.main.dto.LoginDTO;
 import com.ijustspent.main.dto.UserDTO;
+import com.ijustspent.main.models.security.Authority;
+import com.ijustspent.main.models.security.User;
 import com.ijustspent.main.repositories.security.UserRepository;
+import com.ijustspent.main.security.service.TokenService;
+import com.ijustspent.main.services.UserService;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
@@ -20,7 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;

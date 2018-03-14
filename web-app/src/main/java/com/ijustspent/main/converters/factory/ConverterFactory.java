@@ -1,7 +1,7 @@
 package com.ijustspent.main.converters.factory;
 
-import com.budgetmaster.main.converters.dto.UserDTOConverter;
-import com.budgetmaster.main.dto.UserDTO;
+import com.ijustspent.main.converters.dto.UserDTOConverter;
+import com.ijustspent.main.dto.UserDTO;
 import com.ijustspent.main.dto.UserDTO;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

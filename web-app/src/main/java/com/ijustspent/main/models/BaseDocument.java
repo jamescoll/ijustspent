@@ -1,7 +1,7 @@
 package com.ijustspent.main.models;
 
 
-import com.budgetmaster.main.models.security.User;
+import com.ijustspent.main.models.security.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;

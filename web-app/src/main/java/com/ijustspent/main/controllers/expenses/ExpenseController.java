@@ -1,11 +1,11 @@
 package com.ijustspent.main.controllers.expenses;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.expenses.Expense;
-import com.budgetmaster.main.repositories.expenses.ExpenseCategoryRepository;
-import com.budgetmaster.main.repositories.expenses.ExpenseRepository;
-import com.budgetmaster.main.repositories.expenses.PayeeRepository;
-import com.budgetmaster.main.services.LoggedInUserService;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.expenses.Expense;
+import com.ijustspent.main.repositories.expenses.ExpenseCategoryRepository;
+import com.ijustspent.main.repositories.expenses.ExpenseRepository;
+import com.ijustspent.main.repositories.expenses.PayeeRepository;
+import com.ijustspent.main.services.LoggedInUserService;
 import com.ijustspent.main.models.expenses.Expense;
 import com.ijustspent.main.repositories.expenses.ExpenseCategoryRepository;
 import com.ijustspent.main.repositories.expenses.ExpenseRepository;

@@ -1,8 +1,7 @@
 package com.ijustspent.main.controllers.resources;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.resources.Icon;
-import com.budgetmaster.main.repositories.resources.IconRepository;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.resources.Icon;
 import com.ijustspent.main.repositories.resources.IconRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

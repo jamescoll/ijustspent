@@ -1,9 +1,9 @@
 package com.ijustspent.main.converters.dto;
 
-import com.budgetmaster.main.dto.UserDTO;
-import com.budgetmaster.main.models.security.Authority;
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.security.helpers.PasswordHelper;
+import com.ijustspent.main.dto.UserDTO;
+import com.ijustspent.main.models.security.Authority;
+import com.ijustspent.main.models.security.User;
+import com.ijustspent.main.security.helpers.PasswordHelper;
 import com.ijustspent.main.dto.UserDTO;
 import org.springframework.core.convert.converter.Converter;
 

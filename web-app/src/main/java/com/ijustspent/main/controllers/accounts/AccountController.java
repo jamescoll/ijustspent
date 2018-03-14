@@ -1,10 +1,10 @@
 package com.ijustspent.main.controllers.accounts;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.accounts.Account;
-import com.budgetmaster.main.repositories.accounts.AccountRepository;
-import com.budgetmaster.main.repositories.accounts.AccountTypeRepository;
-import com.budgetmaster.main.services.LoggedInUserService;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.accounts.Account;
+import com.ijustspent.main.repositories.accounts.AccountRepository;
+import com.ijustspent.main.repositories.accounts.AccountTypeRepository;
+import com.ijustspent.main.services.LoggedInUserService;
 import com.ijustspent.main.models.accounts.Account;
 import com.ijustspent.main.repositories.accounts.AccountRepository;
 import com.ijustspent.main.repositories.accounts.AccountTypeRepository;

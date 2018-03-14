@@ -1,6 +1,6 @@
 package com.ijustspent.main.services;
 
-import com.budgetmaster.main.models.security.User;
+import com.ijustspent.main.models.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

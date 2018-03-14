@@ -1,11 +1,11 @@
 package com.ijustspent.main.controllers.incomes;
 
-import com.budgetmaster.main.controllers.BaseController;
-import com.budgetmaster.main.models.incomes.Income;
-import com.budgetmaster.main.repositories.accounts.AccountRepository;
-import com.budgetmaster.main.repositories.incomes.IncomeCategoryRepository;
-import com.budgetmaster.main.repositories.incomes.IncomeRepository;
-import com.budgetmaster.main.services.LoggedInUserService;
+import com.ijustspent.main.controllers.BaseController;
+import com.ijustspent.main.models.incomes.Income;
+import com.ijustspent.main.repositories.accounts.AccountRepository;
+import com.ijustspent.main.repositories.incomes.IncomeCategoryRepository;
+import com.ijustspent.main.repositories.incomes.IncomeRepository;
+import com.ijustspent.main.services.LoggedInUserService;
 import com.ijustspent.main.models.incomes.Income;
 import com.ijustspent.main.repositories.accounts.AccountRepository;
 import com.ijustspent.main.repositories.incomes.IncomeCategoryRepository;

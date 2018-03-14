@@ -1,6 +1,6 @@
 package com.ijustspent.main.models.accounts;
 
-import com.budgetmaster.main.models.BaseDocument;
+import com.ijustspent.main.models.BaseDocument;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 

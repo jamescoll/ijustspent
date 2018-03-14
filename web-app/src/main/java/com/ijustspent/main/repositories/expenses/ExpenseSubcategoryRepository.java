@@ -1,7 +1,7 @@
 package com.ijustspent.main.repositories.expenses;
 
-import com.budgetmaster.main.models.expenses.ExpenseCategory;
-import com.budgetmaster.main.models.expenses.ExpenseSubcategory;
+import com.ijustspent.main.models.expenses.ExpenseCategory;
+import com.ijustspent.main.models.expenses.ExpenseSubcategory;
 import com.ijustspent.main.models.expenses.ExpenseCategory;
 import com.ijustspent.main.models.expenses.ExpenseSubcategory;
 import org.springframework.data.mongodb.repository.MongoRepository;

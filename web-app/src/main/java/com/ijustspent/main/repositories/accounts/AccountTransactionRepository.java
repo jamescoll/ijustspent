@@ -1,7 +1,7 @@
 package com.ijustspent.main.repositories.accounts;
 
-import com.budgetmaster.main.models.accounts.Account;
-import com.budgetmaster.main.models.accounts.AccountTransaction;
+import com.ijustspent.main.models.accounts.Account;
+import com.ijustspent.main.models.accounts.AccountTransaction;
 import com.ijustspent.main.models.accounts.Account;
 import com.ijustspent.main.models.accounts.AccountTransaction;
 import org.springframework.data.mongodb.repository.MongoRepository;

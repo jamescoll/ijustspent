@@ -1,9 +1,9 @@
 package com.ijustspent.main.repositories.expenses;
 
 
-import com.budgetmaster.main.models.expenses.Expense;
-import com.budgetmaster.main.models.expenses.ExpenseCategory;
-import com.budgetmaster.main.models.expenses.Payee;
+import com.ijustspent.main.models.expenses.Expense;
+import com.ijustspent.main.models.expenses.ExpenseCategory;
+import com.ijustspent.main.models.expenses.Payee;
 import com.ijustspent.main.models.expenses.Expense;
 import com.ijustspent.main.models.expenses.ExpenseCategory;
 import com.ijustspent.main.models.expenses.Payee;

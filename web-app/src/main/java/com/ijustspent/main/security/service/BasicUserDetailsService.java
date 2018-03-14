@@ -1,7 +1,7 @@
 package com.ijustspent.main.security.service;
 
-import com.budgetmaster.main.models.security.User;
-import com.budgetmaster.main.services.UserService;
+import com.ijustspent.main.models.security.User;
+import com.ijustspent.main.services.UserService;
 import com.ijustspent.main.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
