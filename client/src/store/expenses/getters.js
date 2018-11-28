@@ -1,6 +1,6 @@
 export default {
-  expensesWithCategories: (state, getters, rootGetters) => state.expenses.map(expense => ({
+  expensesWithCategories: (state, getters, rootState, rootGetters) => state.expenses.map(expense => ({ /* eslint-disable-line */
     ...expense,
-    category: rootGetters['categories/categoriesById'][expense.id],
+    category: rootGetters['categories/categoriesById'][expense.category] || null,
   })),
 };

@@ -17,6 +17,11 @@ const router = new Router({
       },
     },
     {
+      path: '/add-expense',
+      name: 'AddExpense',
+      component: () => import('./views/AddExpense.vue'),
+    },
+    {
       path: '/register',
       name: 'Register',
       component: () => import('./views/Register.vue'),

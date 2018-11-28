@@ -6,17 +6,20 @@
       :key="expense.id"
       class="home__expense"
     />
+    <floating-button />
   </div>
 </template>
 
 <script>
 import Expense from '@/components/Expense.vue';
+import FloatingButton from '@/components/FloatingButton.vue';
 import store from '@/store';
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
     Expense,
+    FloatingButton,
   },
   data() {
     return {
